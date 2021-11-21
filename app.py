@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, redirect
 from flask.wrappers import Response
 import numpy as np
 import sqlalchemy
@@ -24,22 +24,24 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
-    """List of all available api routes"""
 
-    return(
-        f"Welcome to the USCarAccidents API for Cities ------<br/>"
-        f"--------------------------<br/>"
-        f"Available Routes :  <br/>"
-        f"/api/v1.0/year            [Description: <br/>"
-        f"/api/v1.0/start/end       [Description:<br/>"
-        f"/api/v1.0/severity        [Description: <br/>"
-        f"/api/v1.0/cityaccidents         [Desciption: <br/>"
-        f"/api/v1.0/weather              <br/>"
-        f"/api/v1.0/roadcondition             <br/>"
-        f"-----------------------------<br/>"
-        f"date format : YYYY-MM-DD"
+    return render_template('home.html')
+    #"""List of all available api routes"""
 
-    )
+    # return(
+    #     f"Welcome to the USCarAccidents API for Cities ------<br/>"
+    #     f"--------------------------<br/>"
+    #     f"Available Routes :  <br/>"
+    #     f"/api/v1.0/year            [Description: <br/>"
+    #     f"/api/v1.0/start/end       [Description:<br/>"
+    #     f"/api/v1.0/severity        [Description: <br/>"
+    #     f"/api/v1.0/cityaccidents         [Desciption: <br/>"
+    #     f"/api/v1.0/weather              <br/>"
+    #     f"/api/v1.0/roadcondition             <br/>"
+    #     f"-----------------------------<br/>"
+    #     f"date format : YYYY-MM-DD"
+
+    # )
 
 
 @app.route("/api/v1.0/<year>")
