@@ -1,0 +1,74 @@
+{
+  "Bump_accidents": [
+    [
+      2020,
+      4
+    ]
+  ],
+  "Junction_accidents": [
+    [
+      2019,
+      242
+    ],
+    [
+      2020,
+      5212
+    ]
+  ],
+  "No_Exit_accidents": [
+    [
+      2019,
+      2
+    ],
+    [
+      2020,
+      125
+    ]
+  ],
+  "Railway_accidents": [
+    [
+      2019,
+      46
+    ],
+    [
+      2020,
+      584
+    ]
+  ],
+  "Station_accidents": [
+    [
+      2019,
+      90
+    ],
+    [
+      2020,
+      1021
+    ]
+  ],
+  "Stop_accidents": [
+    [
+      2019,
+      19
+    ],
+    [
+      2020,
+      307
+    ]
+  ],
+  "Traffic_Calming_accidents": [
+    [
+      2020,
+      4
+    ]
+  ],
+  "Traffic_Signal_accidents": [
+    [
+      2019,
+      222
+    ],
+    [
+      2020,
+      5113
+    ]
+  ]
+}

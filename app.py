@@ -7,6 +7,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session, session
 import datetime as dt
 from config import password
+import json
 
 
 engine = create_engine('sqlite:///us_accidents.db', echo=False)
@@ -69,7 +70,14 @@ def yearlyaccidents(year):
             }
         )
 
-    return jsonify(response)
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
+
+    # Writing to sample1.json
+    with open("querydata/sample1.json", "w") as f:
+        f.write(json_object)
+
+    return render_template('index1.html', data=response)
 
 
 @app.route("/api/v1.0/<start>/<end>")
@@ -93,8 +101,14 @@ def city_accidentcount_in_given_time(start, end):
              "accidents_count": item[1]}
 
         )
+     # Serializing json
+    json_object = json.dumps(response, indent=2)
 
-    return jsonify(response)
+    # Writing to sample2.json
+    with open("querydata/sample2.json", "w") as f:
+        f.write(json_object)
+
+    return render_template('index2.html', data=response)
 
 
 @app.route("/api/v1.0/severity")
@@ -113,7 +127,14 @@ def accidentcount_severity():
                 "accidents_count": item[1]
             }
         )
-    return jsonify(response)
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
+
+    # Writing to sample3.json
+    with open("querydata/sample3.json", "w") as f:
+        f.write(json_object)
+
+    return render_template('index3.html', data=response)
 
 
 @app.route("/api/v1.0/cityaccidents")
@@ -132,8 +153,14 @@ def cityaccidents():
                 "city": item[2]
             }
         )
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
 
-    return jsonify(response)
+    # Writing to sample4.json
+    with open("querydata/sample4.json", "w") as f:
+        f.write(json_object)
+
+    return render_template('index4.html', data=response)
 
 
 @app.route("/api/v1.0/weather")
@@ -153,7 +180,14 @@ def weather():
                 "accidents_count": item[3]
              }
         )
-    return jsonify(response)
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
+
+    # Writing to sample5.json
+    with open("querydata/sample5.json", "w") as f:
+        f.write(json_object)
+
+    return render_template('index5.html', data=response)
 
 
 @app.route("/api/v1.0/roadcondition")
@@ -186,8 +220,14 @@ def roadcondition():
                "Stop_accidents": Stop_accidents,
                "Traffic_Calming_accidents": Traffic_Calming_accidents,
                "Traffic_Signal_accidents": Traffic_Signal_accidents}
+    # Serializing json
+    json_object = json.dumps(results, indent=2)
 
-    return jsonify(results)
+    # Writing to sample6.json
+    with open("querydata/sample6.json", "w") as f:
+        f.write(json_object)
+
+    return render_template('index6.html', data=results)
 
 
 if __name__ == "__main__":
