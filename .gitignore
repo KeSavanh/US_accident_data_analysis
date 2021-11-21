@@ -1,4 +1,3 @@
-config.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -135,4 +134,5 @@ dmypy.json
 __pycache__
 .history
 config.py
-config.py
+
+**/.idea
