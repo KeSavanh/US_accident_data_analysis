@@ -1,0 +1,18 @@
+[
+  {
+    "city": "Dallas",
+    "accidents_count": 35
+  },
+  {
+    "city": "Los Angeles",
+    "accidents_count": 1193
+  },
+  {
+    "city": "New York",
+    "accidents_count": 12
+  },
+  {
+    "city": "San Diego",
+    "accidents_count": 556
+  }
+]

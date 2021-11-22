@@ -1,0 +1,90 @@
+[
+  
+    {
+      "year": 2020,
+      "accidents_count": 4,
+      "traffic_condition": "Bump_accidents"
+    },
+    {
+      "year": 2019,
+      "accidents_count": 0,
+      "traffic_condition": "Bump_accidents"
+    },
+  
+  {
+    "year": 2019,
+      "accidents_count": 242,
+      "traffic_condition":"Junction_accidents"
+  },
+  {
+       "year": 2020,
+       "accidents_count":  5212,
+    "traffic_condition":"Junction_accidents"
+  },
+  {
+     "year": 2019,
+    "accidents_count": 2,
+    "traffic_condition": "No_Exit_accidents"
+  },
+  {
+  "year":2020,
+  "accidents_count":125,
+  "traffic_condition": "No_Exit_accidents"
+  },
+  {
+  "year": 2020,
+  "accidents_count":584,
+  "traffic_condition": "Railway_accidents"
+  },
+  {
+  "year":2019,
+  "accidents_count":46,
+  "traffic_condition": "Railway_accidents"
+  },
+  
+  {
+  "year":2020,
+  "accidents_count":1021,
+  "traffic_condition": "Station_accidents"
+  },
+  {
+  "year":2019,
+  "accidents_count":90,
+  "traffic_condition": "Station_accidents"
+  },
+  
+  {
+  "year":2020,
+  "accidents_count":307,
+  "traffic_condition": "Stop_accidents"
+  },
+  {
+  "year":2019,
+  "accidents_count":19,
+  "traffic_condition": "Stop_accidents"
+  },
+  
+  {
+  "year":2019,
+  "accidents_count":0,
+  "traffic_condition": "Traffic_Calming_accidents"
+  },
+  {
+  "year":2020,
+  "accidents_count":4,
+  "traffic_condition": "Traffic_Calming_accidents"
+  },
+   
+  {
+  "year":2020,
+  "accidents_count":5113,
+  "traffic_condition": "Traffic_Signal_accidents"
+  },
+  {
+  "year":2019,
+  "accidents_count":222,
+  "traffic_condition": "Traffic_Signal_accidents"
+  }
+   
+  
+]

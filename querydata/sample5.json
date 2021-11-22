@@ -1,0 +1,62 @@
+[
+  {
+    "weather": "Cloudy",
+    "year": 2019,
+    "city": "Dallas",
+    "accidents_count": 4
+  },
+  {
+    "weather": "Fair",
+    "year": 2019,
+    "city": "Dallas",
+    "accidents_count": 18
+  },
+  {
+    "weather": "Fair / Windy",
+    "year": 2019,
+    "city": "Dallas",
+    "accidents_count": 1
+  },
+  {
+    "weather": "Light Rain",
+    "year": 2019,
+    "city": "Dallas",
+    "accidents_count": 6
+  },
+  {
+    "weather": "Mostly Cloudy",
+    "year": 2019,
+    "city": "Dallas",
+    "accidents_count": 4
+  },
+  {
+    "weather": "Partly Cloudy",
+    "year": 2019,
+    "city": "Dallas",
+    "accidents_count": 2
+  },
+  {
+    "weather": "Cloudy",
+    "year": 2019,
+    "city": "Los Angeles",
+    "accidents_count": 346
+  },
+  {
+    "weather": "Fair",
+    "year": 2019,
+    "city": "Los Angeles",
+    "accidents_count": 287
+  },
+  {
+    "weather": "Haze",
+    "year": 2019,
+    "city": "Los Angeles",
+    "accidents_count": 1
+  },
+  {
+    "weather": "Heavy Rain",
+    "year": 2019,
+    "city": "Los Angeles",
+    "accidents_count": 105
+  }
+]

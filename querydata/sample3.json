@@ -1,0 +1,18 @@
+[
+  {
+    "severity": 1,
+    "accidents_count": 7
+  },
+  {
+    "severity": 2,
+    "accidents_count": 34887
+  },
+  {
+    "severity": 3,
+    "accidents_count": 1973
+  },
+  {
+    "severity": 4,
+    "accidents_count": 783
+  }
+]
