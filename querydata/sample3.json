@@ -1,18 +1,18 @@
 [
   {
     "severity": 1,
-    "accidents_count": 7
+    "accidents_count": 4
   },
   {
     "severity": 2,
-    "accidents_count": 34887
+    "accidents_count": 34400
   },
   {
     "severity": 3,
-    "accidents_count": 1973
+    "accidents_count": 1843
   },
   {
     "severity": 4,
-    "accidents_count": 783
+    "accidents_count": 713
   }
 ]

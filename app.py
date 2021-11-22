@@ -51,7 +51,7 @@ def welcome():
 def yearlyaccidents(year):
     session = Session(bind=engine)
 
-    sel = (USAccidents.City, USAccidents.State, USAccidents.Start_Lat, USAccidents.Start_Lng,
+    sel = (USAccidents.City, USAccidents.State, USAccidents.Street, USAccidents.Start_Lat, USAccidents.Start_Lng,
            USAccidents.Severity, USAccidents.Weather_Condition)
     results = session.query(*sel).filter(USAccidents.Year == year).all()
 
@@ -64,10 +64,11 @@ def yearlyaccidents(year):
             {
                 "city": item[0],
                 "state": item[1],
-                "lat": item[2],
-                "lng": item[3],
-                "serety": item[4],
-                "weather_condition": item[5]
+                "street": item[2],
+                "lat": item[3],
+                "lng": item[4],
+                "serety": item[5],
+                "weather_condition": item[6]
             }
         )
 
@@ -164,6 +165,28 @@ def accidentcount_severity():
 
     # Writing to sample3.json
     with open("querydata/sample3.json", "w") as f:
+        f.write(json_object)
+
+    # query to find relatio among precipitation, windspeed, severity
+    session = Session(bind=engine)
+    results = session.query(USAccidents.Precipitation,
+                            USAccidents.Wind_Speed, USAccidents.Severity).all()
+    session.close()
+
+    response = []
+    for item in results:
+        response.append(
+            {
+                "precipitation": item[0],
+                "wind_speed": item[1],
+                "severity": item[2]
+            }
+        )
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
+
+    # Writing to sample8.json
+    with open("querydata/sample8.json", "w") as f:
         f.write(json_object)
 
     return render_template('index3.html', table3=table3html)
