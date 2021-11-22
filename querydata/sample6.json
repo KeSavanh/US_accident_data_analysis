@@ -1,74 +1,72 @@
-{
-  "Bump_accidents": [
-    [
-      2020,
-      4
-    ]
-  ],
-  "Junction_accidents": [
-    [
-      2019,
-      241
-    ],
-    [
-      2020,
-      5099
-    ]
-  ],
-  "No_Exit_accidents": [
-    [
-      2019,
-      2
-    ],
-    [
-      2020,
-      121
-    ]
-  ],
-  "Railway_accidents": [
-    [
-      2019,
-      46
-    ],
-    [
-      2020,
-      571
-    ]
-  ],
-  "Station_accidents": [
-    [
-      2019,
-      90
-    ],
-    [
-      2020,
-      986
-    ]
-  ],
-  "Stop_accidents": [
-    [
-      2019,
-      19
-    ],
-    [
-      2020,
-      301
-    ]
-  ],
-  "Traffic_Calming_accidents": [
-    [
-      2020,
-      4
-    ]
-  ],
-  "Traffic_Signal_accidents": [
-    [
-      2019,
-      221
-    ],
-    [
-      2020,
-      5019
-    ]
-  ]
-}
+[
+  {
+    "year": 2020,
+    "no": 4,
+    "cause": "Bump Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 241,
+    "cause": "Junction Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 5099,
+    "cause": "Junction Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 2,
+    "cause": "No Exit Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 121,
+    "cause": "No Exit Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 46,
+    "cause": "Railway Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 571,
+    "cause": "Railway Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 90,
+    "cause": "Station Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 986,
+    "cause": "Station Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 19,
+    "cause": "Railway Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 301,
+    "cause": "Railway Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 4,
+    "cause": "Traffic Calming Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 221,
+    "cause": "Traffic Signal Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 5019,
+    "cause": "Traffic Signal Accidents"
+  }
+]

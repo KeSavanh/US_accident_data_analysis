@@ -6,7 +6,6 @@ from sqlalchemy import create_engine, func, or_
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session, session
 import datetime as dt
-from config import password
 import json
 from json2html import *
 
@@ -300,35 +299,52 @@ def weather():
 @app.route("/api/v1.0/roadcondition")
 # query for accidents count due to different road conditions in two years
 def roadcondition():
+    response = []
     session = Session(bind=engine)
     Bump_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Bump == True).all()
+    response = response + formulateResponse(Bump_accidents, "Bump Accidents")
+
     Junction_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Junction == True).all()
+    response = response + formulateResponse(
+        Junction_accidents, "Junction Accidents")
+
     No_Exit_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.No_Exit == True).all()
+    response = response + \
+        formulateResponse(No_Exit_accidents, "No Exit Accidents")
+
     Railway_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Railway == True).all()
+    response = response + \
+        formulateResponse(Railway_accidents, "Railway Accidents")
+
     Station_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Station == True).all()
+    response = response + \
+        formulateResponse(Station_accidents, "Station Accidents")
+
     Stop_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Stop == True).all()
+    response = response + \
+        formulateResponse(Stop_accidents, "Railway Accidents")
+
     Traffic_Calming_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Traffic_Calming == True).all()
+    response = response + formulateResponse(
+        Traffic_Calming_accidents, "Traffic Calming Accidents")
+
     Traffic_Signal_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Traffic_Signal == True).all()
+    response = response + formulateResponse(
+        Traffic_Signal_accidents, "Traffic Signal Accidents")
+
     session.close()
 
-    results = {"Bump_accidents": Bump_accidents,
-               "Junction_accidents": Junction_accidents,
-               "No_Exit_accidents": No_Exit_accidents,
-               "Railway_accidents": Railway_accidents,
-               "Station_accidents": Station_accidents,
-               "Stop_accidents": Stop_accidents,
-               "Traffic_Calming_accidents": Traffic_Calming_accidents,
-               "Traffic_Signal_accidents": Traffic_Signal_accidents}
     # Serializing json
-    json_object = json.dumps(results, indent=2)
+    json_object = json.dumps(response, indent=2)
+
     # making html string from json object
     table6html = json2html.convert(json=json_object)
 
@@ -337,6 +353,17 @@ def roadcondition():
         f.write(json_object)
 
     return render_template('index6.html', table6=table6html)
+
+
+def formulateResponse(accidentList, type):
+    response = []
+    for accidents in accidentList:
+        response.append({
+            "year": accidents[0],
+            "no": accidents[1],
+            "cause": type
+        })
+    return response
 
 
 if __name__ == "__main__":
