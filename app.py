@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session, session
 import datetime as dt
 from config import password
 import json
+from json2html import *
 
 
 engine = create_engine('sqlite:///us_accidents.db', echo=False)
@@ -73,11 +74,14 @@ def yearlyaccidents(year):
     # Serializing json
     json_object = json.dumps(response, indent=2)
 
+    # making html string from json object
+    table1html = json2html.convert(json=json_object)
+
     # Writing to sample1.json
     with open("querydata/sample1.json", "w") as f:
         f.write(json_object)
 
-    return render_template('index1.html', data=response)
+    return render_template('index1.html', table1=table1html)
 
 
 @app.route("/api/v1.0/<start>/<end>")
@@ -103,6 +107,9 @@ def city_accidentcount_in_given_time(start, end):
         )
      # Serializing json
     json_object = json.dumps(response, indent=2)
+
+    # making html string from json object
+    table2html = json2html.convert(json=json_object)
 
     # Writing to sample2.json
     with open("querydata/sample2.json", "w") as f:
@@ -130,7 +137,7 @@ def city_accidentcount_in_given_time(start, end):
     with open("querydata/sample7.json", "w") as f:
         f.write(json_object1)
 
-    return render_template('index2.html', data=response, data1=response1)
+    return render_template('index2.html', table2=table2html)
 
 
 @app.route("/api/v1.0/severity")
@@ -152,11 +159,14 @@ def accidentcount_severity():
     # Serializing json
     json_object = json.dumps(response, indent=2)
 
+    # making html string from json object
+    table3html = json2html.convert(json=json_object)
+
     # Writing to sample3.json
     with open("querydata/sample3.json", "w") as f:
         f.write(json_object)
 
-    return render_template('index3.html', data=response)
+    return render_template('index3.html', table3=table3html)
 
 
 @app.route("/api/v1.0/cityaccidents")
@@ -178,11 +188,14 @@ def cityaccidents():
     # Serializing json
     json_object = json.dumps(response, indent=2)
 
+    # making html string from json object
+    table4html = json2html.convert(json=json_object)
+
     # Writing to sample4.json
     with open("querydata/sample4.json", "w") as f:
         f.write(json_object)
 
-    return render_template('index4.html', data=response)
+    return render_template('index4.html', table4=table4html)
 
 
 @app.route("/api/v1.0/weather")
@@ -190,7 +203,7 @@ def cityaccidents():
 def weather():
     session = Session(bind=engine)
     results = session.query(USAccidents.Weather_Condition, USAccidents.Year, USAccidents.City, func.count(
-        USAccidents.Year)).group_by(USAccidents.Year, USAccidents.City, USAccidents.Weather_Condition).limit(10).all()
+        USAccidents.Year)).group_by(USAccidents.Year, USAccidents.City, USAccidents.Weather_Condition).all()
     session.close()
 
     response = []
@@ -205,11 +218,14 @@ def weather():
     # Serializing json
     json_object = json.dumps(response, indent=2)
 
+    # making html string from json object
+    table5html = json2html.convert(json=json_object)
+
     # Writing to sample5.json
     with open("querydata/sample5.json", "w") as f:
         f.write(json_object)
 
-    return render_template('index5.html', data=response)
+    return render_template('index5.html', table5=table5html)
 
 
 @app.route("/api/v1.0/roadcondition")
@@ -244,12 +260,14 @@ def roadcondition():
                "Traffic_Signal_accidents": Traffic_Signal_accidents}
     # Serializing json
     json_object = json.dumps(results, indent=2)
+    # making html string from json object
+    table6html = json2html.convert(json=json_object)
 
     # Writing to sample6.json
     with open("querydata/sample6.json", "w") as f:
         f.write(json_object)
 
-    return render_template('index6.html', data=results)
+    return render_template('index6.html', table6=table6html)
 
 
 if __name__ == "__main__":
