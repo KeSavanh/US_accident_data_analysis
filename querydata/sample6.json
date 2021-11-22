@@ -8,11 +8,11 @@
   "Junction_accidents": [
     [
       2019,
-      242
+      241
     ],
     [
       2020,
-      5212
+      5099
     ]
   ],
   "No_Exit_accidents": [
@@ -22,7 +22,7 @@
     ],
     [
       2020,
-      125
+      121
     ]
   ],
   "Railway_accidents": [
@@ -32,7 +32,7 @@
     ],
     [
       2020,
-      584
+      571
     ]
   ],
   "Station_accidents": [
@@ -42,7 +42,7 @@
     ],
     [
       2020,
-      1021
+      986
     ]
   ],
   "Stop_accidents": [
@@ -52,7 +52,7 @@
     ],
     [
       2020,
-      307
+      301
     ]
   ],
   "Traffic_Calming_accidents": [
@@ -64,11 +64,11 @@
   "Traffic_Signal_accidents": [
     [
       2019,
-      222
+      221
     ],
     [
       2020,
-      5113
+      5019
     ]
   ]
 }

@@ -218,6 +218,52 @@ def cityaccidents():
     with open("querydata/sample4.json", "w") as f:
         f.write(json_object)
 
+    # query for hourly accidents count in each city
+    session = Session(bind=engine)
+    results = session.query(USAccidents.City, func.count(USAccidents.Accident_id), func.strftime("%H", USAccidents.Start_Time)).\
+        group_by(USAccidents.City, func.strftime(
+            "%H", USAccidents.Start_Time)).all()
+    session.close()
+
+    response = []
+    for item in results:
+        response.append(
+            {
+                "city": item[0],
+                "accidents_count": item[1],
+                "hour": item[2]
+            }
+        )
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
+
+    # Writing to sample9.json
+    with open("querydata/sample9.json", "w") as f:
+        f.write(json_object)
+
+    # query for weekdaywise accidents count in each city
+    session = Session(bind=engine)
+    results = session.query(USAccidents.City, func.count(USAccidents.Accident_id), func.strftime("%w", USAccidents.Start_Time)).\
+        group_by(USAccidents.City, func.strftime(
+            "%w", USAccidents.Start_Time)).all()
+    session.close()
+
+    response = []
+    for item in results:
+        response.append(
+            {
+                "city": item[0],
+                "accidents_count": item[1],
+                "weekday": item[2]
+            }
+        )
+    # Serializing json
+    json_object = json.dumps(response, indent=2)
+
+    # Writing to sample9.json
+    with open("querydata/sample10.json", "w") as f:
+        f.write(json_object)
+
     return render_template('index4.html', table4=table4html)
 
 

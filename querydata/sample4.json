@@ -6,7 +6,7 @@
   },
   {
     "year": 2019,
-    "accidents_count": 1193,
+    "accidents_count": 1190,
     "city": "Los Angeles"
   },
   {
@@ -16,27 +16,27 @@
   },
   {
     "year": 2019,
-    "accidents_count": 556,
+    "accidents_count": 550,
     "city": "San Diego"
   },
   {
     "year": 2020,
-    "accidents_count": 8731,
+    "accidents_count": 8723,
     "city": "Dallas"
   },
   {
     "year": 2020,
-    "accidents_count": 18933,
+    "accidents_count": 18617,
     "city": "Los Angeles"
   },
   {
     "year": 2020,
-    "accidents_count": 1979,
+    "accidents_count": 1722,
     "city": "New York"
   },
   {
     "year": 2020,
-    "accidents_count": 6211,
+    "accidents_count": 6111,
     "city": "San Diego"
   }
 ]
