@@ -108,7 +108,29 @@ def city_accidentcount_in_given_time(start, end):
     with open("querydata/sample2.json", "w") as f:
         f.write(json_object)
 
-    return render_template('index2.html', data=response)
+    # query for lineplot with time in 4 cities
+    session = Session(bind=engine)
+    results = session.query(USAccidents.City, func.count(USAccidents.City), func.strftime("%Y-%m", USAccidents.StartDate)).\
+        group_by(USAccidents.City, func.strftime(
+            "%Y-%m", USAccidents.StartDate)).all()
+    session.close()
+
+    response1 = []
+
+    for item in results:
+        response1.append(
+            {"city": item[0],
+             "accidents_count": item[1],
+             "year-month": item[2]}
+
+        )
+     # Serializing json
+    json_object1 = json.dumps(response1, indent=2)
+
+    with open("querydata/sample7.json", "w") as f:
+        f.write(json_object1)
+
+    return render_template('index2.html', data=response, data1=response1)
 
 
 @app.route("/api/v1.0/severity")
