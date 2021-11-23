@@ -303,42 +303,38 @@ def roadcondition():
     session = Session(bind=engine)
     Bump_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Bump == True).all()
-    response = response + formulateResponse(Bump_accidents, "Bump Accidents")
+    response += formulateResponse(Bump_accidents, "Bump Accidents")
 
     Junction_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Junction == True).all()
-    response = response + formulateResponse(
+    response += formulateResponse(
         Junction_accidents, "Junction Accidents")
 
     No_Exit_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.No_Exit == True).all()
-    response = response + \
-        formulateResponse(No_Exit_accidents, "No Exit Accidents")
+    response += formulateResponse(No_Exit_accidents, "No Exit Accidents")
 
     Railway_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Railway == True).all()
-    response = response + \
-        formulateResponse(Railway_accidents, "Railway Accidents")
+    response += formulateResponse(Railway_accidents, "Railway Accidents")
 
     Station_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Station == True).all()
-    response = response + \
-        formulateResponse(Station_accidents, "Station Accidents")
+    response += formulateResponse(Station_accidents, "Station Accidents")
 
     Stop_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Stop == True).all()
-    response = response + \
-        formulateResponse(Stop_accidents, "Railway Accidents")
+    response += formulateResponse(Stop_accidents, "Railway Accidents")
 
     Traffic_Calming_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Traffic_Calming == True).all()
-    response = response + formulateResponse(
-        Traffic_Calming_accidents, "Traffic Calming Accidents")
+    response += formulateResponse(Traffic_Calming_accidents,
+                                  "Traffic Calming Accidents")
 
     Traffic_Signal_accidents = session.query(USAccidents.Year, func.count(USAccidents.Year)).group_by(
         USAccidents.Year).filter(USAccidents.Traffic_Signal == True).all()
-    response = response + formulateResponse(
-        Traffic_Signal_accidents, "Traffic Signal Accidents")
+    response += formulateResponse(Traffic_Signal_accidents,
+                                  "Traffic Signal Accidents")
 
     session.close()
 
