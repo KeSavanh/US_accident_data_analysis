@@ -51,7 +51,7 @@
   },
   {
     "city": "Dallas",
-    "accidents_count": 1071,
+    "accidents_count": 1067,
     "year-month": "2020-10"
   },
   {
@@ -61,42 +61,42 @@
   },
   {
     "city": "Dallas",
-    "accidents_count": 2965,
+    "accidents_count": 2961,
     "year-month": "2020-12"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1193,
+    "accidents_count": 1190,
     "year-month": "2019-12"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 2022,
+    "accidents_count": 2015,
     "year-month": "2020-01"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1831,
+    "accidents_count": 1796,
     "year-month": "2020-02"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1780,
+    "accidents_count": 1742,
     "year-month": "2020-03"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1224,
+    "accidents_count": 1198,
     "year-month": "2020-04"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1368,
+    "accidents_count": 1311,
     "year-month": "2020-05"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1564,
+    "accidents_count": 1522,
     "year-month": "2020-06"
   },
   {
@@ -111,22 +111,22 @@
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 653,
+    "accidents_count": 645,
     "year-month": "2020-09"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 1390,
+    "accidents_count": 1350,
     "year-month": "2020-10"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 3299,
+    "accidents_count": 3274,
     "year-month": "2020-11"
   },
   {
     "city": "Los Angeles",
-    "accidents_count": 3787,
+    "accidents_count": 3749,
     "year-month": "2020-12"
   },
   {
@@ -136,87 +136,87 @@
   },
   {
     "city": "New York",
-    "accidents_count": 27,
+    "accidents_count": 18,
     "year-month": "2020-01"
   },
   {
     "city": "New York",
-    "accidents_count": 83,
+    "accidents_count": 80,
     "year-month": "2020-02"
   },
   {
     "city": "New York",
-    "accidents_count": 96,
+    "accidents_count": 93,
     "year-month": "2020-03"
   },
   {
     "city": "New York",
-    "accidents_count": 198,
+    "accidents_count": 180,
     "year-month": "2020-04"
   },
   {
     "city": "New York",
-    "accidents_count": 191,
+    "accidents_count": 100,
     "year-month": "2020-05"
   },
   {
     "city": "New York",
-    "accidents_count": 166,
+    "accidents_count": 68,
     "year-month": "2020-06"
   },
   {
     "city": "New York",
-    "accidents_count": 240,
+    "accidents_count": 237,
     "year-month": "2020-09"
   },
   {
     "city": "New York",
-    "accidents_count": 337,
+    "accidents_count": 329,
     "year-month": "2020-10"
   },
   {
     "city": "New York",
-    "accidents_count": 381,
+    "accidents_count": 372,
     "year-month": "2020-11"
   },
   {
     "city": "New York",
-    "accidents_count": 260,
+    "accidents_count": 245,
     "year-month": "2020-12"
   },
   {
     "city": "San Diego",
-    "accidents_count": 556,
+    "accidents_count": 550,
     "year-month": "2019-12"
   },
   {
     "city": "San Diego",
-    "accidents_count": 715,
+    "accidents_count": 712,
     "year-month": "2020-01"
   },
   {
     "city": "San Diego",
-    "accidents_count": 651,
+    "accidents_count": 645,
     "year-month": "2020-02"
   },
   {
     "city": "San Diego",
-    "accidents_count": 680,
+    "accidents_count": 670,
     "year-month": "2020-03"
   },
   {
     "city": "San Diego",
-    "accidents_count": 603,
+    "accidents_count": 594,
     "year-month": "2020-04"
   },
   {
     "city": "San Diego",
-    "accidents_count": 304,
+    "accidents_count": 298,
     "year-month": "2020-05"
   },
   {
     "city": "San Diego",
-    "accidents_count": 517,
+    "accidents_count": 513,
     "year-month": "2020-06"
   },
   {
@@ -231,22 +231,22 @@
   },
   {
     "city": "San Diego",
-    "accidents_count": 130,
+    "accidents_count": 128,
     "year-month": "2020-09"
   },
   {
     "city": "San Diego",
-    "accidents_count": 386,
+    "accidents_count": 376,
     "year-month": "2020-10"
   },
   {
     "city": "San Diego",
-    "accidents_count": 1000,
+    "accidents_count": 965,
     "year-month": "2020-11"
   },
   {
     "city": "San Diego",
-    "accidents_count": 1217,
+    "accidents_count": 1202,
     "year-month": "2020-12"
   }
 ]

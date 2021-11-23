@@ -39,13 +39,13 @@
     "weather": "Cloudy",
     "year": 2019,
     "city": "Los Angeles",
-    "accidents_count": 346
+    "accidents_count": 344
   },
   {
     "weather": "Fair",
     "year": 2019,
     "city": "Los Angeles",
-    "accidents_count": 287
+    "accidents_count": 286
   },
   {
     "weather": "Haze",
@@ -123,7 +123,7 @@
     "weather": "Cloudy",
     "year": 2019,
     "city": "San Diego",
-    "accidents_count": 122
+    "accidents_count": 119
   },
   {
     "weather": "Fair",
@@ -153,13 +153,13 @@
     "weather": "Light Rain",
     "year": 2019,
     "city": "San Diego",
-    "accidents_count": 102
+    "accidents_count": 100
   },
   {
     "weather": "Mostly Cloudy",
     "year": 2019,
     "city": "San Diego",
-    "accidents_count": 71
+    "accidents_count": 70
   },
   {
     "weather": "Partly Cloudy",
@@ -207,7 +207,7 @@
     "weather": "Fair",
     "year": 2020,
     "city": "Dallas",
-    "accidents_count": 4089
+    "accidents_count": 4081
   },
   {
     "weather": "Fair / Windy",
@@ -363,13 +363,13 @@
     "weather": "Cloudy",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 2086
+    "accidents_count": 2063
   },
   {
     "weather": "Fair",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 12125
+    "accidents_count": 11903
   },
   {
     "weather": "Fair / Windy",
@@ -387,7 +387,7 @@
     "weather": "Haze",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 1112
+    "accidents_count": 1095
   },
   {
     "weather": "Heavy Rain",
@@ -411,7 +411,7 @@
     "weather": "Light Rain",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 647
+    "accidents_count": 643
   },
   {
     "weather": "Mist",
@@ -423,7 +423,7 @@
     "weather": "Mostly Cloudy",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 1036
+    "accidents_count": 1009
   },
   {
     "weather": "Mostly Cloudy / Windy",
@@ -435,7 +435,7 @@
     "weather": "Partly Cloudy",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 1176
+    "accidents_count": 1158
   },
   {
     "weather": "Partly Cloudy / Windy",
@@ -453,7 +453,7 @@
     "weather": "Rain",
     "year": 2020,
     "city": "Los Angeles",
-    "accidents_count": 200
+    "accidents_count": 195
   },
   {
     "weather": "Smoke",
@@ -477,13 +477,13 @@
     "weather": "Cloudy",
     "year": 2020,
     "city": "New York",
-    "accidents_count": 411
+    "accidents_count": 361
   },
   {
     "weather": "Fair",
     "year": 2020,
     "city": "New York",
-    "accidents_count": 998
+    "accidents_count": 871
   },
   {
     "weather": "Fog",
@@ -513,7 +513,7 @@
     "weather": "Light Rain",
     "year": 2020,
     "city": "New York",
-    "accidents_count": 175
+    "accidents_count": 156
   },
   {
     "weather": "Light Rain / Windy",
@@ -531,19 +531,19 @@
     "weather": "Mostly Cloudy",
     "year": 2020,
     "city": "New York",
-    "accidents_count": 215
+    "accidents_count": 180
   },
   {
     "weather": "Partly Cloudy",
     "year": 2020,
     "city": "New York",
-    "accidents_count": 83
+    "accidents_count": 61
   },
   {
     "weather": "Rain",
     "year": 2020,
     "city": "New York",
-    "accidents_count": 39
+    "accidents_count": 35
   },
   {
     "weather": "Snow",
@@ -555,13 +555,13 @@
     "weather": "Cloudy",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 903
+    "accidents_count": 878
   },
   {
     "weather": "Fair",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 2742
+    "accidents_count": 2695
   },
   {
     "weather": "Fair / Windy",
@@ -573,19 +573,19 @@
     "weather": "Fog",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 89
+    "accidents_count": 86
   },
   {
     "weather": "Haze",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 99
+    "accidents_count": 93
   },
   {
     "weather": "Heavy Rain",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 92
+    "accidents_count": 89
   },
   {
     "weather": "Light Drizzle",
@@ -597,7 +597,7 @@
     "weather": "Light Rain",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 499
+    "accidents_count": 496
   },
   {
     "weather": "Light Rain with Thunder",
@@ -606,16 +606,10 @@
     "accidents_count": 3
   },
   {
-    "weather": "Light Snow",
-    "year": 2020,
-    "city": "San Diego",
-    "accidents_count": 7
-  },
-  {
     "weather": "Mostly Cloudy",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 1042
+    "accidents_count": 1039
   },
   {
     "weather": "Mostly Cloudy / Windy",
@@ -624,16 +618,10 @@
     "accidents_count": 5
   },
   {
-    "weather": "N/A Precipitation",
-    "year": 2020,
-    "city": "San Diego",
-    "accidents_count": 2
-  },
-  {
     "weather": "Partly Cloudy",
     "year": 2020,
     "city": "San Diego",
-    "accidents_count": 585
+    "accidents_count": 584
   },
   {
     "weather": "Rain",
