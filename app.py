@@ -22,37 +22,26 @@ USAccidents = base.classes.us_accidents
 
 app = Flask(__name__)
 
+# ------------------------------------------------------------------------------------------------------------
+
 
 @app.route("/")
 def welcome():
-
     return render_template('home.html')
-    #"""List of all available api routes"""
 
-    # return(
-    #     f"Welcome to the USCarAccidents API for Cities ------<br/>"
-    #     f"--------------------------<br/>"
-    #     f"Available Routes :  <br/>"
-    #     f"/api/v1.0/year            [Description: <br/>"
-    #     f"/api/v1.0/start/end       [Description:<br/>"
-    #     f"/api/v1.0/severity        [Description: <br/>"
-    #     f"/api/v1.0/cityaccidents         [Desciption: <br/>"
-    #     f"/api/v1.0/weather              <br/>"
-    #     f"/api/v1.0/roadcondition             <br/>"
-    #     f"-----------------------------<br/>"
-    #     f"date format : YYYY-MM-DD"
+# ------------------------------------------------------------------------------------------------------------
 
-    # )
+# -------------------------------------------------------------------------------------------------------------
 
 
-@app.route("/api/v1.0/<year>")
+@app.route("/year/data")
 # query for yearwise results of accidents and lerafletplot
-def yearlyaccidents(year):
+def yearlyaccidents():
     session = Session(bind=engine)
 
-    sel = (USAccidents.City, USAccidents.State, USAccidents.Street, USAccidents.Start_Lat, USAccidents.Start_Lng,
+    sel = (USAccidents.Year, USAccidents.City, USAccidents.State, USAccidents.Street, USAccidents.Start_Lat, USAccidents.Start_Lng,
            USAccidents.Severity, USAccidents.Weather_Condition)
-    results = session.query(*sel).filter(USAccidents.Year == year).all()
+    results = session.query(*sel).all()
 
     session.close()
 
@@ -60,29 +49,28 @@ def yearlyaccidents(year):
 
     for item in results:
         response.append(
-            {
-                "city": item[0],
-                "state": item[1],
-                "street": item[2],
-                "lat": item[3],
-                "lng": item[4],
-                "serety": item[5],
-                "weather_condition": item[6]
-            }
+            {"year": item[0],
+                "city": item[1],
+                "state": item[2],
+                "street": item[3],
+                "lat": item[4],
+                "lng": item[5],
+                "severity": item[6],
+                "weather_condition": item[7]
+             }
         )
+    return jsonify(response)
 
-    # Serializing json
-    json_object = json.dumps(response, indent=2)
 
-    # making html string from json object
-    table1html = json2html.convert(json=json_object)
+@app.route("/year-datavis")
+# query for yearwise results of accidents and lerafletplot
+def yearlyvis():
+    return render_template('index1.html')
 
-    # Writing to sample1.json
-    with open("querydata/sample1.json", "w") as f:
-        f.write(json_object)
+# ---------------------------------------------------------------------------------------------------------------------
 
-    return render_template('index1.html', table1=table1html)
 
+# ----------------------------------------------------------------------------------------------------------------------
 
 @app.route("/api/v1.0/<start>/<end>")
 # query for accidents count citywise in a time range

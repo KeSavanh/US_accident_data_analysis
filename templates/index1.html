@@ -6,41 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>USCarAccidents</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="static/style.css">
+
+
+    <!--Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <!-- Leaflet JavaScript code -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+
+
 </head>
 
 <body>
     <div class="container">
-        <div class="box">
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <h2>Car accidents plot</h2>
+            </div>
+        </div>
 
-            <div class="table-responsive table-striped "
-                style="overflow-x:auto; overflow-y:auto; max-height:470px; max-width: auto;">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="well">
+                    <h5>City</h5>
+                    <select id="selCity" onchange="selectCity(this.value)"></select>
+                </div>
 
-                {{table1 | safe}}
+
+                <div class="well">
+                    <h5>Year</h5>
+                    <select id="selYear" onchange="selectCity(this.value)"></select>
+                </div>
 
             </div>
+
+
+            <div class=" col-md-10" style="background-color: cadetblue;height: 500px;;">
+
+                <div id="map"></div>
+            </div>
+
         </div>
     </div>
 
+    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-    <script src="./static/logic.js"></script>
+    <script src="static/logic1.js"></script>
 
 </body>
 
