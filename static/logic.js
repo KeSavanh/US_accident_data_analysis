@@ -270,14 +270,14 @@ let year2019 = data.filter(yearfilter19);
 
  //TRACE  FOR Bump_accidents
  let trace1 = {
-  x: year2019.map(row => row.traffic_condition),
-  y: year2019.map(row => row.accidents_count),
+  x: year2019.map(row => row.cause),
+  y: year2019.map(row => row.no),
   name:"2019",
   type: "bar"
 };
 let trace2={
-  x: year2020.map(row => row.traffic_condition),
-  y: year2020.map(row => row.accidents_count),
+  x: year2020.map(row => row.cause),
+  y: year2020.map(row => row.no),
   name:2020,
   type: "bar"
 }
@@ -295,7 +295,7 @@ let trace2={
 
 
 /////////////////////////////////////////////
-//ACCIDENT COUNT FOR EACH CITY MONTHWISE COMPARISON////index7.html
+//MONTHWISE ANALYSIS FOR CITIES ////index7.html
 d3.json("../querydata/sample7.json").then(function(data) {
   console.log(data);
   //FILTERING FOR Dallas
@@ -388,6 +388,239 @@ Lineplot();
     }
 });
 
+//////////////////////////////////////////////////
+//SEVERITY VS WEATHER COMPARISON//index8.html
+d3.json("../querydata/sample8.json").then(function(data) {
+  //  console.log(data);
+  //TRACE  FOR Severity vs Precipitation
+  let trace1 = {
+    x: data.map(row =>row.severity),//row.severity),
+    y: data.map(row =>row.precipitation),//row.precipitation),
+    name:"precipitation",
+    //mode: 'markers',
+    type: "bar"
+  };
+  //TRACE  FOR Severity vs Wind Speed
+  let trace2={
+    x: data.map(row => row.severity),
+    y: data.map(row => row.wind_speed),
+    name:"wind_speed",
+    //mode: 'markers',
+    type: "bar"
+  };
+  // Data trace array
+  let traceData = [trace2];
+  let traceprcp=[trace1];
+
+// Apply the group barmode to the layout
+  let layout1 = {
+  // barmode: 'group',
+  title:'Severity vs Precipitation',
+  height:400,
+  width:400
+  };
+  let layout2 = {
+    // barmode: 'group',
+    title:'Severity vs Windspeed',
+    height:400,
+    width:400
+    };
+
+  // Render the plot to the div tag with id "plot"
+  Plotly.newPlot("plot8", traceData, layout2);
+  Plotly.newPlot("plot8prcp", traceprcp, layout1);
+});
+
+
+/////////////////////////////////////////////
+//HOURLY ANALYSIS FOR CITIES////index9.html
+d3.json("../querydata/sample9.json").then(function(data) {
+  console.log(data);
+  //FILTERING FOR Dallas
+ function City1(data1){
+  return (data1.city == 'Dallas');   
+}
+let  Dallascity= data.filter(City1);
+
+//FILTERING FOR Los Angeles
+ function City2(data1){
+   return (data1.city == 'Los Angeles');
+ }
+ let  LAcity = data.filter(City2);
+
+ //FILTERING FOR New York
+ function City3(data1){
+  return (data1.city == 'New York');
+}
+let  NYcity = data.filter(City3);
+
+ //FILTERING FOR San Diego
+ function City4(data1){
+  return (data1.city == 'San Diego');
+}
+let  SDcity = data.filter(City4);  
+ 
+Lineplot();
+    
+   function Lineplot(){
+      ///TRACE FOR DALLAS
+      let trace1 = {
+        x: Dallascity.map(row => row.hour),
+        y: Dallascity.map(row => row.accidents_count),
+        name:"Dallas",
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'red',
+          width: 3
+        }
+      };
+      ///TRACE FOR LOS ANGELES
+      let trace2={
+        x: LAcity.map(row => row.hour),
+        y: LAcity.map(row => row.accidents_count),
+        name:'Los Angeles',
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'blue',
+          width: 3
+        }
+      }
+      ///TRACE FOR NEW YORK
+      let trace3={
+        x: NYcity.map(row => row.hour),
+        y: NYcity.map(row => row.accidents_count),
+        name:'New York',
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'green',
+          width: 3
+        }
+      }
+      ///TRACE FOR SAN DIEGO
+      let trace4={
+        x: SDcity.map(row => row.hour),
+        y: SDcity.map(row => row.accidents_count),
+        name:'San Diego',
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'orange',
+          width: 3
+        }
+      }
+        // Data trace array
+        let traceData = [trace2,trace1,trace3,trace4];
+      
+   // Apply the group barmode to the layout
+        let layout1 = {
+        height:500,
+        width:700
+    };
+   
+   // Render the plot to the div tag with id "plot"
+    Plotly.newPlot("line9", traceData, layout1);
+    }
+});
 
 
 
+/////////////////////////////////////////////
+//WEEKLY ANALYSIS FOR CITIES////index10.html
+d3.json("../querydata/sample10.json").then(function(data) {
+  //console.log(data);
+   //FILTERING FOR Dallas
+ function City1(data1){
+  return (data1.city == 'Dallas');   
+}
+let  Dallascity= data.filter(City1);
+
+//FILTERING FOR Los Angeles
+ function City2(data1){
+   return (data1.city == 'Los Angeles');
+ }
+ let  LAcity = data.filter(City2);
+
+ //FILTERING FOR New York
+ function City3(data1){
+  return (data1.city == 'New York');
+}
+let  NYcity = data.filter(City3);
+
+ //FILTERING FOR San Diego
+ function City4(data1){
+  return (data1.city == 'San Diego');
+}
+let  SDcity = data.filter(City4);  
+ 
+Lineplot();
+    
+   function Lineplot(){
+      ///TRACE FOR DALLAS
+      let trace1 = {
+        x: Dallascity.map(row => row.weekday),
+        y: Dallascity.map(row => row.accidents_count),
+        name:"Dallas",
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'red',
+          width: 3
+        }
+      };
+      ///TRACE FOR LOS ANGELES
+      let trace2={
+        x: LAcity.map(row => row.weekday),
+        y: LAcity.map(row => row.accidents_count),
+        name:'Los Angeles',
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'blue',
+          width: 3
+        }
+      }
+      ///TRACE FOR NEW YORK
+      let trace3={
+        x: NYcity.map(row => row.weekday),
+        y: NYcity.map(row => row.accidents_count),
+        name:'New York',
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'green',
+          width: 3
+        }
+      }
+      ///TRACE FOR SAN DIEGO
+      let trace4={
+        x: SDcity.map(row => row.weekday),
+        y: SDcity.map(row => row.accidents_count),
+        name:'San Diego',
+        type: "scatter",
+        mode: 'lines',
+        line: {
+          color: 'orange',
+          width: 3
+        }
+      }
+        // Data trace array
+        let traceData = [trace2,trace1,trace3,trace4];
+      
+   // Apply the group barmode to the layout
+        let layout1 = {
+          xaxis: {
+            tickvals:['0', '1', '2','3','4','5','6'],
+            ticktext : ['Sunday', 'Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday'],
+            tickangle: 45
+          },
+        height:500,
+        width:700
+    };
+   
+   // Render the plot to the div tag with id "plot"
+    Plotly.newPlot("line10", traceData, layout1);
+    }
+});

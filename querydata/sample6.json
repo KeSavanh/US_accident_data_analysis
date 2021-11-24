@@ -1,90 +1,72 @@
 [
-  
-    {
-      "year": 2020,
-      "accidents_count": 4,
-      "traffic_condition": "Bump_accidents"
-    },
-    {
-      "year": 2019,
-      "accidents_count": 0,
-      "traffic_condition": "Bump_accidents"
-    },
-  
+  {
+    "year": 2020,
+    "no": 4,
+    "cause": "Bump Accidents"
+  },
   {
     "year": 2019,
-      "accidents_count": 242,
-      "traffic_condition":"Junction_accidents"
+    "no": 241,
+    "cause": "Junction Accidents"
   },
   {
-       "year": 2020,
-       "accidents_count":  5212,
-    "traffic_condition":"Junction_accidents"
+    "year": 2020,
+    "no": 5099,
+    "cause": "Junction Accidents"
   },
   {
-     "year": 2019,
-    "accidents_count": 2,
-    "traffic_condition": "No_Exit_accidents"
+    "year": 2019,
+    "no": 2,
+    "cause": "No Exit Accidents"
   },
   {
-  "year":2020,
-  "accidents_count":125,
-  "traffic_condition": "No_Exit_accidents"
+    "year": 2020,
+    "no": 121,
+    "cause": "No Exit Accidents"
   },
   {
-  "year": 2020,
-  "accidents_count":584,
-  "traffic_condition": "Railway_accidents"
+    "year": 2019,
+    "no": 46,
+    "cause": "Railway Accidents"
   },
   {
-  "year":2019,
-  "accidents_count":46,
-  "traffic_condition": "Railway_accidents"
-  },
-  
-  {
-  "year":2020,
-  "accidents_count":1021,
-  "traffic_condition": "Station_accidents"
+    "year": 2020,
+    "no": 571,
+    "cause": "Railway Accidents"
   },
   {
-  "year":2019,
-  "accidents_count":90,
-  "traffic_condition": "Station_accidents"
-  },
-  
-  {
-  "year":2020,
-  "accidents_count":307,
-  "traffic_condition": "Stop_accidents"
+    "year": 2019,
+    "no": 90,
+    "cause": "Station Accidents"
   },
   {
-  "year":2019,
-  "accidents_count":19,
-  "traffic_condition": "Stop_accidents"
-  },
-  
-  {
-  "year":2019,
-  "accidents_count":0,
-  "traffic_condition": "Traffic_Calming_accidents"
+    "year": 2020,
+    "no": 986,
+    "cause": "Station Accidents"
   },
   {
-  "year":2020,
-  "accidents_count":4,
-  "traffic_condition": "Traffic_Calming_accidents"
-  },
-   
-  {
-  "year":2020,
-  "accidents_count":5113,
-  "traffic_condition": "Traffic_Signal_accidents"
+    "year": 2019,
+    "no": 19,
+    "cause": "Railway Accidents"
   },
   {
-  "year":2019,
-  "accidents_count":222,
-  "traffic_condition": "Traffic_Signal_accidents"
+    "year": 2020,
+    "no": 301,
+    "cause": "Railway Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 4,
+    "cause": "Traffic Calming Accidents"
+  },
+  {
+    "year": 2019,
+    "no": 221,
+    "cause": "Traffic Signal Accidents"
+  },
+  {
+    "year": 2020,
+    "no": 5019,
+    "cause": "Traffic Signal Accidents"
   }
-   
-  
 ]
