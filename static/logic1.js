@@ -9,7 +9,13 @@ d3.select("#selCity").selectAll('option')
     .text((d) => { return d; })
     .attr("value", function (d) { return d; });
 
-// adding years in the dropdown menu
+//calling selectCity function when selecting city from dropdown menu
+
+d3.select("#selCity").on("change", () => {
+    fetchAccidentData();
+});
+
+// adding years to dropdown
 let years = [2019, 2020]
 
 d3.select("#selYear").selectAll('option')
@@ -19,69 +25,62 @@ d3.select("#selYear").selectAll('option')
     .text((d) => { return d; })
     .attr("value", function (d) { return d; });
 
-
-//calling selectCity function when selecting city from dropdown menu
-
-d3.select("#selCity").selectAll("option").on("change", () => {
-    selectCity(d3.select(this).text)
-
+d3.select("#selYear").on("change", () => {
+    fetchAccidentData();
 });
 
-function selectCity(selectedCity) {
 
-    console.log(selectedCity)
+function fetchAccidentData() {
+    var selectedCity = d3.select("#selCity").property("value");
+    console.log("Selected City = " + selectedCity);
+    var selectedYear = d3.select("#selYear").property("value");
+    console.log("Selected Year = " + selectedYear);
 
-    const url = '/year/data'
+    const url = '/year/data?year=' + selectedYear + '&city=' + selectedCity
+    d3.json(url).then(data => handleYearResponse(data));
+}
 
-    d3.json(url).then(function (data) {
-        console.log(data);
+function handleYearResponse(data) {
+    console.log(data);
+    // let cityData = data.filter(item => item.city == selectedCity && item.year == selectedYear);
+    // console.log(cityData);
 
-    })
+    // Define arrays to hold the created city and state markers.
+    var accidentMarkers = [];
 
-    d3.select("#selYear").selectAll("option").on("change", () => {
-        var selectedYear = d3.select(this).text
-    });
+    // Loop through locations, and create the accident markers.
+    for (var i = 0; i < data.length; i++) {
+        accidentMarkers.push(L.marker([data[i].lat, data[i].lng]).bindPopup(`<h4>Accident_ID: ${data[i].accident_id}</h4> <hr> <h5>Location:${data[i].street}</h5> <br> <h5>Severity:${data[i].severity}</h5> <br><h5>State: ${data[i].state}</h5>`)
+        )
+    };
 
-    console.log(selectedYear)
+    accidentsLayer = L.layerGroup(accidentMarkers);
+
+    createMap(accidentsLayer, [data[0].lat, data[0].lng])
 
 }
 
-
-
-
-
-
-/*
-
-// Define arrays to hold the created city and state markers.
-var accidentMarkers = [];
-// Loop through locations, and create the city and state markers.
-for (var i = 0; i < cityData.length; i++) {
-    // Setting the marker radius for the state by passing population into the markerSize function
-    accidentMarkers.push(L.marker([data[i].lat, data[i].lng]))
-};
-
-accidentsLayer = L.layerGroup(accidentMarkers);
-
-createMap(accidentsLayer)
-*/
-
-
-/*
-
-function createMap(accidentsLayer) {
+var myMap;
+function createMap(accidentsLayer, cityCenter) {
     // Create the base layers.
     var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
 
+    if (myMap) {
+        myMap.remove();
+    }
+
+
     // Creating the map object
     // Define a map object.
-    var myMap = L.map("map", {
-        center: [37.09, -95.71],
+    myMap = L.map("map", {
+        center: cityCenter,
         zoom: 5,
         layers: [street, accidentsLayer]
     });
+
+
 
     // Create a baseMaps object.
     var baseMaps = {
@@ -100,14 +99,16 @@ function createMap(accidentsLayer) {
     }).addTo(myMap);
 
 };
-*/
+
 
 
 
 
 // A function to determine the marker size based on the population
-// function markerSize(severity) {
-//     return severity * 50;
-// };
+function markerSize(severity) {
+    return severity * 50;
+};
 
-
+document.addEventListener("DOMContentLoaded", function (e) {
+    fetchAccidentData();
+});
