@@ -97,7 +97,7 @@ def city_accidentcount():
 
 # ------------------------------------------------------------------------------------------------
 
-# query for monthlylineplot with time in 4 cities
+# query for monthlyplot with time in 4 cities
 
 
 @app.route("/monthly/data")
@@ -119,7 +119,7 @@ def monthlydata():
     return jsonify(response)
 # ---------------------------------------------------------------------------------------------------------------------------
 
-# query for weekly lineplot with time in 4 cities
+# query for weekly plot with time in 4 cities
 
 
 @app.route("/weekly/data")
