@@ -42,8 +42,6 @@ function fetchAccidentData() {
 
 function handleYearResponse(data) {
     console.log(data);
-    // let cityData = data.filter(item => item.city == selectedCity && item.year == selectedYear);
-    // console.log(cityData);
 
     // Define arrays to hold the created city and state markers.
     var accidentMarkers = [];
@@ -67,6 +65,7 @@ function createMap(accidentsLayer, cityCenter) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
 
+    //clearing map before creating new map
     if (myMap) {
         myMap.remove();
     }
@@ -76,7 +75,7 @@ function createMap(accidentsLayer, cityCenter) {
     // Define a map object.
     myMap = L.map("map", {
         center: cityCenter,
-        zoom: 5,
+        zoom: 14,
         layers: [street, accidentsLayer]
     });
 
