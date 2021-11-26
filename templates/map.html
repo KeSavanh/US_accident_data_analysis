@@ -25,29 +25,31 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
-
+    <!-- Leaflet heatmap plugin-->
+    <script type="text/javascript" src="static/leaflet-heat.js"></script>
 
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 jumbotron text-center">
-                <h2>Car accidents plot</h2>
+    <div class="container" style="background-color: tan;">
+        <div class="row" style="padding: 0px;">
+            <div class="col-md-12 jumbotron text-center"
+                style="background-image:url(https://cdn.pixabay.com/photo/2016/04/02/20/54/road-1303617_1280.jpg);background-size: contain;background-repeat: no-repeat;background-size :1200px 200px;;">
+                <h2 style="color:white"> US Car Accidents Locations</h2>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <div class="well">
-                    <h5>City</h5>
+        <div class="row" style="padding: 0px;">
+            <div class="col-md-2" style="height: 500px;">
+                <div class="well" style="background-color:pink;">
+                    <h4>City</h4>
                     <select id="selCity"></select>
                 </div>
 
 
-                <div class="well">
-                    <h5>Year</h5>
+                <div class="well" style="background-color: pink;">
+                    <h4>Year</h4>
                     <select id="selYear"></select>
                 </div>
 

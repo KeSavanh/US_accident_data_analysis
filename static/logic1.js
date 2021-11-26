@@ -48,22 +48,48 @@ function handleYearResponse(data) {
 
     // Loop through locations, and create the accident markers.
     for (var i = 0; i < data.length; i++) {
-        accidentMarkers.push(L.marker([data[i].lat, data[i].lng]).bindPopup(`<h4>Accident_ID: ${data[i].accident_id}</h4> <hr> <h5>Location:${data[i].street}</h5> <br> <h5>Severity:${data[i].severity}</h5> <br><h5>State: ${data[i].state}</h5>`)
+        accidentMarkers.push(L.circle([data[i].lat, data[i].lng], {
+            color: 'black',
+            fillColor: chooseColor(data[i].severity),
+            fillOpacity: 0.5,
+            weight: 0.5,
+            radius: markerSize(data[i].severity)
+        }).bindPopup(`<h4>Accident_ID: ${data[i].accident_id}</h4> <hr> <h5>Location:${data[i].street}</h5> <br> <h5>Severity:${data[i].severity}</h5> <br><h5>State: ${data[i].state}</h5>`)
         )
     };
 
-    accidentsLayer = L.layerGroup(accidentMarkers);
+    var accidentsLayer = new L.layerGroup(accidentMarkers);
 
-    createMap(accidentsLayer, [data[0].lat, data[0].lng])
+    var heatArray = [];
+
+    for (var i = 0; i < data.length; i++) {
+        heatArray.push([data[i].lat, data[i].lng]);
+    };
+
+
+    var heat = L.heatLayer(heatArray, {
+        radius: 25,
+        blur: 15,
+        minOpacity: 0.15,
+        gradient: { 0.4: 'blue', 0.65: 'lime', 1: 'red' }
+    });
+
+
+    createMap(accidentsLayer, [data[0].lat, data[0].lng], heat)
 
 }
 
 var myMap;
-function createMap(accidentsLayer, cityCenter) {
+
+function createMap(accidentsLayer, cityCenter, heat) {
     // Create the base layers.
     var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
+    var topo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 20,
+        attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
+    });
 
     //clearing map before creating new map
     if (myMap) {
@@ -75,8 +101,8 @@ function createMap(accidentsLayer, cityCenter) {
     // Define a map object.
     myMap = L.map("map", {
         center: cityCenter,
-        zoom: 14,
-        layers: [street, accidentsLayer]
+        zoom: 15,
+        layers: [street, topo, accidentsLayer]
     });
 
 
@@ -84,12 +110,14 @@ function createMap(accidentsLayer, cityCenter) {
     // Create a baseMaps object.
     var baseMaps = {
         "Street Map": street,
-        "Accident Map": accidentsLayer
+        "Topology Map": topo
     };
 
     // Create an overlay object.
     var overlayMaps = {
-        "Accident Map": accidentsLayer
+        "Accident Map": accidentsLayer,
+        "Heat Map": heat
+
     };
     // Pass our map layers to our layer control.
     // Add the layer control to the map.
@@ -97,16 +125,42 @@ function createMap(accidentsLayer, cityCenter) {
         collapsed: false
     }).addTo(myMap);
 
+
+    // legend map
+
+    var legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'info legend');
+
+        div.innerHTML += "<h4>Severity</h4>";
+        div.innerHTML += '<i style="background: green"></i><span>1</span><br>';
+        div.innerHTML += '<i style="background: orange"></i><span>2</span><br>';
+        div.innerHTML += '<i style="background: red"></i><span>3</span><br>';
+        div.innerHTML += '<i style="background: purple"></i><span>4</span><br>';
+
+        return div;
+
+    };
+
+    legend.addTo(myMap);
+
+
 };
-
-
-
 
 
 // A function to determine the marker size based on the population
 function markerSize(severity) {
-    return severity * 50;
+    return severity * 80;
 };
+
+function chooseColor(severity) {
+    if (severity == 1) { return 'green' }
+    else if (severity == 2) { return 'orange' }
+    else if (severity == 3) { return 'red' }
+    else if (severity == 4) { return 'purple' }
+}
 
 document.addEventListener("DOMContentLoaded", function (e) {
     fetchAccidentData();
