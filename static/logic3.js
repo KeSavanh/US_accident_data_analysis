@@ -204,7 +204,7 @@ d3.json("/hourly/data").then(function (data) {
         // Apply the group barmode to the layout
         let layout1 = {
             title: 'accidents_percentage variation hourly',
-            xaxis: { title: 'hour' },
+            xaxis: { title: 'hours' },
             yaxis: { title: 'accident_counts_percentage' }
         };
 
