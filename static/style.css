@@ -49,3 +49,10 @@ body {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
 }
+ .plot-container {
+  height: 65%; 
+} 
+
+.full-height {
+  height: 100%
+}

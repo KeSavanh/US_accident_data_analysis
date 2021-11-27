@@ -1,3 +1,7 @@
+let plotlyConfig = {
+    responsive: true
+};
+
 //WEEKLY ANALYSIS FOR CITIES////
 d3.json("/weekly/data").then(function (data) {
     console.log(data);
@@ -25,54 +29,64 @@ d3.json("/weekly/data").then(function (data) {
     }
     let SDcity = data.filter(City4);
 
+    function find_total(city) {
+        let total = 0;
+        for (item of city) {
+            total += item.accidents_count
+        }
+        return total;
+    }
+
+
     Lineplot();
+
 
     function Lineplot() {
         ///TRACE FOR DALLAS
         let trace1 = {
             x: Dallascity.map(row => row.weekday),
-            y: Dallascity.map(row => row.accidents_count),
+            y: Dallascity.map(row => ((row.accidents_count) / find_total(Dallascity)) * 100),
             name: "Dallas",
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'red',
+                color: '#990099',
                 width: 3
             }
         };
         ///TRACE FOR LOS ANGELES
         let trace2 = {
             x: LAcity.map(row => row.weekday),
-            y: LAcity.map(row => row.accidents_count),
+            y: LAcity.map(row => ((row.accidents_count) / find_total(LAcity)) * 100),
             name: 'Los Angeles',
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'blue',
+                color: '#6b62c7',
                 width: 3
             }
         }
         ///TRACE FOR NEW YORK
         let trace3 = {
             x: NYcity.map(row => row.weekday),
-            y: NYcity.map(row => row.accidents_count),
+            y: NYcity.map(row => ((row.accidents_count) / find_total(NYcity)) * 100),
             name: 'New York',
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'green',
+                color: '#129488',
                 width: 3
             }
         }
         ///TRACE FOR SAN DIEGO
         let trace4 = {
             x: SDcity.map(row => row.weekday),
-            y: SDcity.map(row => row.accidents_count),
+            y: SDcity.map(row => ((row.accidents_count) / find_total(SDcity)) * 100),
             name: 'San Diego',
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'orange',
+                color: '#FF6600',
                 width: 3
             }
         }
@@ -86,12 +100,13 @@ d3.json("/weekly/data").then(function (data) {
                 ticktext: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
                 tickangle: 45
             },
-            height: 500,
-            width: 700
+            yaxis: { title: 'accident_counts_percentage' },
+            title: 'accidents_percentage variation on weekdays'
+
         };
 
         // Render the plot to the div tag with id "plot"
-        Plotly.newPlot("plot1", traceData, layout1);
+        Plotly.newPlot("plot1", traceData, layout1, plotlyConfig);
     }
 });
 
@@ -124,54 +139,62 @@ d3.json("/hourly/data").then(function (data) {
     }
     let SDcity = data.filter(City4);
 
+    function find_total(city) {
+        let total = 0;
+        for (item of city) {
+            total += item.accidents_count
+        }
+        return total;
+    }
+
     Lineplot();
 
     function Lineplot() {
         ///TRACE FOR DALLAS
         let trace1 = {
             x: Dallascity.map(row => row.hour),
-            y: Dallascity.map(row => row.accidents_count),
+            y: Dallascity.map(row => ((row.accidents_count) / find_total(Dallascity)) * 100),
             name: "Dallas",
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'red',
+                color: '#990099',
                 width: 3
             }
         };
         ///TRACE FOR LOS ANGELES
         let trace2 = {
             x: LAcity.map(row => row.hour),
-            y: LAcity.map(row => row.accidents_count),
+            y: LAcity.map(row => ((row.accidents_count) / find_total(LAcity)) * 100),
             name: 'Los Angeles',
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'blue',
+                color: '#6b62c7',
                 width: 3
             }
         }
         ///TRACE FOR NEW YORK
         let trace3 = {
             x: NYcity.map(row => row.hour),
-            y: NYcity.map(row => row.accidents_count),
+            y: NYcity.map(row => ((row.accidents_count) / find_total(NYcity)) * 100),
             name: 'New York',
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'green',
+                color: '#129488',
                 width: 3
             }
         }
         ///TRACE FOR SAN DIEGO
         let trace4 = {
             x: SDcity.map(row => row.hour),
-            y: SDcity.map(row => row.accidents_count),
+            y: SDcity.map(row => ((row.accidents_count) / find_total(SDcity)) * 100),
             name: 'San Diego',
             type: "scatter",
             mode: 'lines',
             line: {
-                color: 'orange',
+                color: '#FF6600',
                 width: 3
             }
         }
@@ -180,12 +203,13 @@ d3.json("/hourly/data").then(function (data) {
 
         // Apply the group barmode to the layout
         let layout1 = {
-            height: 500,
-            width: 700
+            title: 'accidents_percentage variation hourly',
+            xaxis: { title: 'hour' },
+            yaxis: { title: 'accident_counts_percentage' }
         };
 
         // Render the plot to the div tag with id "plot"
-        Plotly.newPlot("plot2", traceData, layout1);
+        Plotly.newPlot("plot2", traceData, layout1, plotlyConfig);
     }
 });
 
