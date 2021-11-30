@@ -139,10 +139,10 @@ d3.json('/weekly/data').then((response) => {
     let NYAvg = [];
     let SDAvg = [];
 
-    for (item of Dallascity) { DallasAvg.push(item.accidents_count / find_total(Dallascity)); }
-    for (item of LAcity) { LAAvg.push(item.accidents_count / find_total(LAcity)); }
-    for (item of NYcity) { NYAvg.push(item.accidents_count / find_total(NYcity)); }
-    for (item of SDcity) { SDAvg.push(item.accidents_count / find_total(SDcity)); }
+    for (item of Dallascity) { DallasAvg.push((item.accidents_count / find_total(Dallascity)) * 100); }
+    for (item of LAcity) { LAAvg.push((item.accidents_count / find_total(LAcity)) * 100); }
+    for (item of NYcity) { NYAvg.push((item.accidents_count / find_total(NYcity)) * 100); }
+    for (item of SDcity) { SDAvg.push((item.accidents_count / find_total(SDcity)) * 100); }
 
 
     let myChart = document.getElementById('myChart').getContext('2d');
