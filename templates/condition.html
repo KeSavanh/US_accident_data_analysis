@@ -14,7 +14,6 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <!----Plotly cdn-->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 
@@ -31,12 +30,11 @@
 
 
             <div class="row">
-                <div class="col-md-5">
-                    <div id="plot1"></div>
+                <div class="col-md-12">
+                    <!--<div id="plot1"></div>-->
+                    <canvas id="myChart" height="1000" ; width="1000"></canvas>
                 </div>
-                <div class="col-md-5">
-                    <div id="plot2"></div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -53,6 +51,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+    <!-- CDN for Chart.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
     <script src="static/logic5.js"></script>
 
 </body>

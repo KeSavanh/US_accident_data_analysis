@@ -86,44 +86,32 @@ d3.json("/monthly/data").then(function (data) {
             x: Dallascity.map(row => row.year_month),
             y: Dallascity.map(row => row.accidents_count),
             name: "Dallas",
-            mode: 'lines',
-            line: {
-                color: 'red',
-                width: 3
-            }
+            fill: 'tozeroy',
+            type: 'scatter'
         };
         ///TRACE FOR LOS ANGELES
         let trace2 = {
             x: LAcity.map(row => row.year_month),
             y: LAcity.map(row => row.accidents_count),
             name: 'Los Angeles',
-            mode: 'lines',
-            line: {
-                color: 'blue',
-                width: 3
-            }
+            fill: 'tonexty',
+            type: 'scatter'
         }
         ///TRACE FOR NEW YORK
         let trace3 = {
             x: NYcity.map(row => row.year_month),
             y: NYcity.map(row => row.accidents_count),
             name: 'New York',
-            mode: 'lines',
-            line: {
-                color: 'green',
-                width: 3
-            }
+            fill: 'tonexty',
+            type: 'scatter'
         }
         ///TRACE FOR SAN DIEGO
         let trace4 = {
             x: SDcity.map(row => row.year_month),
             y: SDcity.map(row => row.accidents_count),
             name: 'San Diego',
-            mode: 'lines',
-            line: {
-                color: 'orange',
-                width: 3
-            }
+            fill: 'tonexty',
+            type: 'scatter'
         }
         // Data trace array
         let traceData = [trace2, trace1, trace3, trace4];

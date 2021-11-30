@@ -1,3 +1,4 @@
+/*
 //////////////////////////////////////////////////
 //TRAFFIC CONDITION COMPARISON//
 d3.json("/roadcondition/data").then(function (data) {
@@ -39,4 +40,71 @@ d3.json("/roadcondition/data").then(function (data) {
     // Render the plot to the div tag with id "plot"
     Plotly.newPlot("plot1", traceData, layout1);
 });
+*/
+
+
+d3.json('/roadcondition/data').then((data) => {
+
+    console.log(data);
+
+
+    let causes = [];
+    for (row of data) { if (row.year == 2020) { causes.push(row.cause); } }
+    console.log(causes);
+
+    let accidents_count = [];
+    for (row of data) { if (row.year == 2020) { accidents_count.push(row.no); } }
+    console.log(accidents_count);
+
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    let radarChart = new Chart(myChart, {
+        type: 'radar',
+        data: {
+            labels: causes,
+            datasets: [{
+                label: 'Accident counts',
+                data: accidents_count,
+                backgroundColor: 'red',
+                borderwidth: 1,
+                borderColor: "grey",
+                hoverBorderWidth: 3,
+                hoverBorderColor: "black"
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Accidents count for different road condition",
+                fontSize: 25
+            },
+            legend: {
+                position: "right",
+                labels: {
+                    fontColor: "black"
+                },
+                layout: {
+                    padding: {
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        right: 0
+                    }
+
+                },
+                tooltips: {
+                    enabled: true
+                }
+
+            }
+        }
+    });
+
+
+})
+
+
+
+
+
 

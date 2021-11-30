@@ -4,10 +4,9 @@ import numpy as np
 import sqlalchemy
 from sqlalchemy import create_engine, func, or_
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session, session
+from sqlalchemy.orm import Session
 import datetime as dt
 import json
-from json2html import *
 from sqlalchemy.sql.expression import null
 
 
@@ -19,6 +18,7 @@ base.prepare(engine, reflect=True)
 
 
 USAccidents = base.classes.us_accidents
+USWeather = base.classes.us_weather
 
 
 app = Flask(__name__)
@@ -189,8 +189,8 @@ def accidentcount_severity():
 @app.route("/prcp-wsp/data")
 def prcp_wsp():
     session = Session(bind=engine)
-    results = session.query(USAccidents.Precipitation,
-                            USAccidents.Wind_Speed, USAccidents.Severity).all()
+    results = session.query(USWeather.Precipitation,
+                            USWeather.Wind_Speed, USWeather.Severity).all()
     session.close()
 
     response = []
