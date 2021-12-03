@@ -16,6 +16,13 @@ body {
 }
 
 .maintxt {
+  text-align: center;
+   font-size: 25px;
+}
+
+#title-text {
+  font-size: 50px;
+
 }
 
 #title-img {
@@ -36,7 +43,7 @@ body {
 .btm-right {
   position:absolute;
   bottom: 5px;
-  right: 350px;
+  right: 370px;
   font-size: 11px;
 }
 
@@ -53,10 +60,10 @@ body {
   background-image: url('headerpic1.jpg');
   height: 70px;
 }
-h1 {
+/* h1 {
   font-size: 30px;
   padding-top: 10px;
-}
+} */
 
 #title-img  {
   opacity: 1; 
@@ -115,18 +122,18 @@ h1 {
   height: 65%; 
 } 
 
-/* .full-height {
+.full-height {
   height: 100%
-} */
+}
 
 /* #header-bx {
   background-color: rgb(53, 142, 169);
   height: 70px;
 } */
-.full-height {
+/* .full-height {
 height: 700px;
 width: auto;
-}
+} */
 
 .dropdown-item {
   color: rgb(13, 80, 152);
@@ -134,4 +141,9 @@ width: auto;
 
 .nav-link {
   color: rgb(8, 55, 106);
+}
+
+.plot-container, canvas {
+  border: solid darkgray 1px;
+  padding-left: 50px;
 }

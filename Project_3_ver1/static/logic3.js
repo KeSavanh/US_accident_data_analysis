@@ -210,7 +210,7 @@ d3.json("/hourly/data").then(function (data) {
         };
 
         // Render the plot to the div tag with id "plot"
-        Plotly.newPlot("plot2", traceData, layout1);
+        Plotly.newPlot("plot-sect-2", traceData, layout1);
     }
 });
 
@@ -453,7 +453,7 @@ d3.json("/severity/data").then(function(data) {
       marker:{
        color: ['red','blue', 'orange', 'red']
       },
-      type: "bar"
+      type: "pie"
     };
       // Data trace array
       let traceData = [trace1];
@@ -686,7 +686,7 @@ d3.json("/monthly/data").then(function (data) {
         };
 
         // Render the plot to the div tag with id "plot"
-        Plotly.newPlot("plot12", traceData, layout1);
+        Plotly.newPlot("plot-sect-1", traceData, layout1);
     }
 });
 

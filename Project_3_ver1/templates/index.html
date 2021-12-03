@@ -25,9 +25,6 @@
     <!-- D3 library -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <!-- JavaScript  -->
-    <!-- <script src="static/logic1.js"></script> -->
-
 </head>
 
 <body>
@@ -42,18 +39,18 @@
 
     <!-- title image starts -->
     <div class="container-fluid" id="title-img">
-        <div class="maintxt" style="text-align: center; font-size: 25px;">
+        <div class="maintxt" >
             <!-- <img src="https://images.unsplash.com/photo-1593571560705-aeb8f2e978f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1165&q=80" width="1250" height="380" alt="" class="img-responsive"> -->
             <!-- <img src="https://resources.stuff.co.nz/content/dam/images/4/y/v/1/a/d/image.related.StuffLandscapeSixteenByNine.1240x700.4yvlbi.png/1635936752096.jpg?format=pjpg&optimize=medium" width="1000" height="380" alt="" class="img-responsive"> -->
-            <!-- <img src="https://france3-regions.francetvinfo.fr/image/DLjJSjRhXUuT0Nz0Ak2nRyoqnhI/930x620//filters:format(webp)/regions/2021/01/28/601307b68e52a_pompiers-011-5174992.jpg" width="1100" height="450" alt="" class="img-responsive"> -->
-            <!-- <img src="https://shabiba.eu-central-1.linodeobjects.com/2018/10/14/947608.jpg" width="1100" height="400" alt="" class="img-responsive"> -->
+            <!-- <img id="title-img" src="https://france3-regions.francetvinfo.fr/image/DLjJSjRhXUuT0Nz0Ak2nRyoqnhI/930x620//filters:format(webp)/regions/2021/01/28/601307b68e52a_pompiers-011-5174992.jpg" width="1200" height="430" alt="" class="img-responsive"> -->
+            <img id="title-img" src="https://shabiba.eu-central-1.linodeobjects.com/2018/10/14/947608.jpg" width="1100" height="400" alt="" class="img-responsive">
             <!-- <img id="title-img" src="https://static.aviva.io/content/dam/aviva-public/ie/articles/car/minor-car-accident.jpg" width="1200" height="400" alt="" class="img-responsive"> -->
-            <img id="title-img" src="https://cdn.pixabay.com/photo/2017/06/21/10/13/bobby-car-2426781_960_720.jpg" width="1100" height="380" alt="" class="img-responsive">
+            <!-- <img id="title-img" src="https://cdn.pixabay.com/photo/2017/06/21/10/13/bobby-car-2426781_960_720.jpg" width="1200" height="400" alt="" class="img-responsive"> -->
 
             <div class="centered">
-                <h1 style="font-size: 50px; border: darkgrey solid 0.5px; border-radius: 5px;">US Traffic Accidents in 2019 and 2020</h1>
-                <hr style=" height: 2px; width: 100%;color:white;background-color:white">
-                <p style="font-weight: normal; font-size: 20px; color: whitesmoke;">Car accidents records for cities Dallas, Los Angeles, NewYork, SanDiego</p>
+                <h1 id="title-text" >US Traffic Accidents in 2019 and 2020</h1>
+                <hr style=" height: 1.5px; width: 100%;color:white;background-color:white">
+                <p style="font-weight: normal; font-size: 18px; color: whitesmoke;">Car accidents records for cities Dallas, Los Angeles, NewYork, SanDiego</p>
             </div>
             <div class="btm-right">
                 <a href="https://cdn.pixabay.com/" style="color: white; font-weight: normal; font-style: italic;">Image source: https://cdn.pixabay.com/</a>
@@ -70,24 +67,7 @@
                 <div class="col-12">
                     <ul class="nav nav-tabs justify-content-center">
                         <li class="nav-item"><a class="nav-link active"href="index.html"style="font-size: 15px; font-weight: bold;">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 15px; font-weight: bold;">
-                                API
-                              </a>
-                            <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/year/data">Yearwise car accidents results in four cities</a>
-                                    <a class="dropdown-item" href="/city/data">accidents counts in cities in a time range</a>
-                                    <a class="dropdown-item" href="/monthly/data">accidents counts monthly</a>
-                                    <a class="dropdown-item" href="/weekly/data">accidents counts weekly</a>
-                                    <a class="dropdown-item" href="/hourly/data">accident counts by different hour range</a>
-                                    <a class="dropdown-item" href="/severity/data">	
-                                        accidents count by severity</a>
-                                    <a class="dropdown-item" href="/prcp-wsp/data">accident counts with precipitation</a>
-                                    <a class="dropdown-item" href="/weather/data">accident counts with weather conditions</a>
-                                    <a class="dropdown-item" href="/roadcondition/data">accident counts with traffic conditions</a>
-                            </div>
-                        </li>
+                        
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"style="font-size: 15px; font-weight: bold;">
                             Visualization
@@ -98,6 +78,24 @@
                                 <a class="dropdown-item" href="/city-vis">Analysis by Cities</a>
                           </div>
                         </li>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 15px; font-weight: bold;">
+                            API
+                          </a>
+                        <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/year/data">Yearwise car accidents results in four cities</a>
+                                <a class="dropdown-item" href="/city/data">accidents counts in cities in a time range</a>
+                                <a class="dropdown-item" href="/monthly/data">accidents counts monthly</a>
+                                <a class="dropdown-item" href="/weekly/data">accidents counts weekly</a>
+                                <a class="dropdown-item" href="/hourly/data">accident counts by different hour range</a>
+                                <a class="dropdown-item" href="/severity/data">	
+                                    accidents count by severity</a>
+                                <a class="dropdown-item" href="/prcp-wsp/data">accident counts with precipitation</a>
+                                <a class="dropdown-item" href="/weather/data">accident counts with weather conditions</a>
+                                <a class="dropdown-item" href="/roadcondition/data">accident counts with traffic conditions</a>
+                        </div>
+                    </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/aboutus" style="font-size: 15px; font-weight: bold;">About Us</a>
                         </li>
@@ -112,32 +110,66 @@
             <div class="col-12 col-md-3 col-xl-2 ev-sidebar" style="background-color: rgb(209, 222, 245);">
                 <br>
                 <nav class="collapes bd-links" id="bd-docs-nav">
+
+                    <br>
+                    <br>
+                    <br>
                     <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="#">Background</a>
+                        <a class="bd-toc-link" href="#head-1">Project Summary</a>
                     </div>
+                    <br>
                     <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="#">Background</a>
+                        <a class="bd-toc-link" href="#head-2">Motivation</a>
                     </div>
+                    <br>
                     <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="#">Background</a>
+                        <a class="bd-toc-link" href="#head-3">Data</a>
                     </div>
+                    <br>
                     <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="#">Background</a>
+                        <a class="bd-toc-link" href="#head-4">Conclusion</a>
                     </div>
                 </nav>
             </div>
             <!-- letside bar ends -->
 
             <!-- main content starts -->
-            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content" style="background-color: rgb(167, 224, 230);">
-                <h1 class="ev-title"> Project summary </h1>
-                <hr>
-                <p>pragraph1</p>
-                <br>
-                <p>pragraph1</p>
-                <br>
-                <p>pragraph1</p>
-                <hr>
+            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content">
+                <div class="col-lg-12">
+                    <h1 class="ev-title"> Project Summary </h1>
+                    <br>
+                </div>
+                
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <br>
+                        <h2 id="head-1">Motivation: </h2>
+                        <hr>
+                        <p>USA car accident in the big figure</p>
+                        <br>
+                        <p>This project is trying to answer these questions:</p>
+                        <br>
+                        <p>How the total accident counts fluctuate from in two year?</p>
+                        <br>
+                        <p>What is the relationship between accident severity and different factors?</p>
+                        <br>
+                        <h2 id="head-2">Data:</h2>
+                        <hr>
+                        <p>Data source: </p>
+                        <br>
+                        <p>Data Exploration: </p>
+                        <br>
+                        <p>Data Processe (ETL): </p>
+                        <br>
+                        <p>Visualization: </p>
+                        <br>
+                        <h2 id="head-3">Conclusion: </h2>
+                        <hr>
+                        <p>pragraph1</p>
+                        
+                    </div>
+                </div>
+                
             </div>
             <!-- main content ends -->
         </div>
@@ -146,7 +178,7 @@
     <!-- footer starts -->
     <footer class="bg-light text-center text-lg-start">
         <div class="text-center p-3" style="background-color: rgb(53, 142, 169); font-size: 16px; font-weight: lighter; color: white;">
-        Data visualization project submission by: Team members
+        Data visualization project submission by: <a href="/aboutus" style="color: white;">Team members</a> 
         </div>
     </footer>
     <!-- footer ends -->

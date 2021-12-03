@@ -2,47 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>General</title>
-
-    <!-- D3 library -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="static/style.css">
-
-    <!--Bootstrap CSS  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>USCarAccidents</title>
     
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
-
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
     
-     <!-- Leaflet JavaScript code -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    
+    
+        <!--Bootstrap CSS  -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin="" />
+    
+        <!-- Leaflet JavaScript code -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
-    
+        <!-- Leaflet heatmap plugin-->
+        <script type="text/javascript" src="static/leaflet-heat.js"></script>
+    </head>
 
-    <!-- Leaflet heatmap plugin-->
-    <script type="text/javascript" src="static/leaflet-heat.js"></script>
-    
-
-</head>
 
 <body>
     <!-- header starts -->
@@ -55,7 +41,7 @@
     </div>
     <div class="container-fluid" style="background-color: white; height: 18px;"></div>
     <!-- header ends -->
-
+ 
     <!-- container starts -->
     <div class="container-fluid">
         <!-- jumbotron starts -->
@@ -74,7 +60,7 @@
         <!-- navbar starts -->
         <div class="row">
             <div class="col-12">
-                <ul class="nav nav-tabs justify-content-center" style="align-items: center;">
+                <ul class="nav nav-tabs justify-content-center">
                     <li class="nav-item"><a class="nav-link "href="/"style="font-size: 15px; font-weight: bold;">Home</a>
                     </li>
                     
@@ -113,72 +99,54 @@
             </div>
         </div>
         <!-- navbar ends -->
-         <!--  first section starts -->
-        <div class="row flex-xl-nowrap">
-            <!-- leftside bar starts -->
-            <div class="col-12 col-md-3 col-xl-2 " id="toc-container" style="background-color: rgb(209, 222, 245);">
-               <h3 style="margin-top: 50px;">Table of content</h3>
-               <hr style="border-radius: 2px; border: 1.5px solid gray">
-               <br>
-               <br>
-               <div class="col-md-10" style="height: 500px;">
-                    <div class="well" style="background-color:pink;">
-                        <h4>City</h4>
-                        <select id="selCity"></select>
-                    </div>
-
-
-                    <div class="well" style="background-color: pink;">
-                        <h4>Year</h4>
-                        <select id="selYear"></select>
-                    </div>
-
-                </div>
-            </div>
-            <!-- letside bar ends -->
-            <!-- main content starts -->
-            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content">
-
-                <div class="row" > 
-                    <div class="col-lg-12">
-                        <h2 id="section-one">Percentage of Accident Counts Variation Weekly and Hourly</h2>
-                        <br>
-                    </div>
-                </div>
-                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
-                    <div class="col-md-12">
-                        <p>plot1 description</p>
-                        <br>
-                    </div>
-                </div>
-                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
-                    <div class=" col-md-10" style="height: 500px;">
-
-                        <div id="map"></div>
-                    </div>
-
-                </div>
-                
-                
-            </div>
-            <!-- main content ends -->
-        </div>  
-        <!-- first section ends -->
-     
+         <!-- content starts -->
+        
     </div>
-
     <!-- container ends -->
 
+    <div class="container" style="background-color: tan;">
+        <div class="row" style="padding: 0px;">
+            <div class="col-md-12 jumbotron text-center"
+                style="background-image:url(https://cdn.pixabay.com/photo/2016/04/02/20/54/road-1303617_1280.jpg);background-size: contain;background-repeat: no-repeat;background-size :1200px 200px;;">
+                <h2 style="color:white"> US Car Accidents Locations</h2>
+            </div>
+        </div>
 
+        <div class="row" style="padding: 0px;">
+            <div class="col-md-2" style="height: 500px;">
+                <div class="well" style="background-color:pink;">
+                    <h4>City</h4>
+                    <select id="selCity"></select>
+                </div>
+
+
+                <div class="well" style="background-color: pink;">
+                    <h4>Year</h4>
+                    <select id="selYear"></select>
+                </div>
+
+            </div>
+
+
+            <div class=" col-md-10" style="height: 500px;">
+
+                <div id="map"></div>
+            </div>
+
+        </div>
+    </div>
+    
+    
     <!-- footer starts -->
     <footer class="bg-light text-center text-lg-start">
         <div class="text-center p-3" style="background-color: rgb(53, 142, 169); font-size: 16px; font-weight: lighter; color: white;">
         Data visualization project submission by: Team members
         </div>
     </footer>
-    <!-- footer ends -->   
-    <!-- javascript -->
+    <!-- footer ends -->  
+    
     <script src="static/logic1.js"></script>
 </body>
+
 
 </html>

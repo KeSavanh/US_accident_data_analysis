@@ -101,7 +101,7 @@ function createMap(accidentsLayer, cityCenter, heat) {
     // Define a map object.
     myMap = L.map("map", {
         center: cityCenter,
-        zoom: 15,
+        zoom: 10,
         layers: [street, topo, accidentsLayer]
     });
 
