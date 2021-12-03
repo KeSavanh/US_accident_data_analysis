@@ -144,6 +144,6 @@ width: auto;
 }
 
 .plot-container, canvas {
-  border: solid darkgray 1px;
+  
   padding-left: 50px;
 }
