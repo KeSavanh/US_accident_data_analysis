@@ -204,9 +204,9 @@ d3.json("/hourly/data").then(function (data) {
 
         // Apply the group barmode to the layout
         let layout1 = {
-            title: 'accidents_percentage variation hourly',
+            title: 'Accidents Percentage Variation Hourly',
             xaxis: { title: 'hours' },
-            yaxis: { title: 'accident_counts_percentage' }
+            yaxis: { title: 'Accident Counts Percentage' }
         };
 
         // Render the plot to the div tag with id "plot"
@@ -252,6 +252,12 @@ d3.json("/roadcondition/data").then(function (data) {
     // Apply the group barmode to the layout
     let layout1 = {
         barmode: 'group',
+        title: 'Total Accident counts Vs. Traffic Conditions',
+        xaxis: {title: {text: 'Traffic Conditions', standoff: 40},  automargin: true},
+        yaxis: {title: 'Accident Count',  automargin: true},
+        height: 500,
+        width: 1000,
+        
     };
 
     // Render the plot to the div tag with id "plot"
@@ -334,8 +340,11 @@ d3.json("/weather/data").then(function (data) {
         let layout1 = {
             barmode: 'stack',
             // title:data.map(row => row.city),
-            height: 700,
-            width: 700
+            height: 500,
+            width: 1000,
+            title: 'Total Accident counts Vs. Weather Conditions',
+            xaxis: {title: 'Accident Count'},
+            yaxis: {title: {text:'Weather Condition', standoff: 40}, automargin: true}
             
         };
 
@@ -373,13 +382,17 @@ d3.json("/prcp-wsp/data").then(function (data) {
         // barmode: 'group',
         title: 'Severity vs Precipitation',
         height: 400,
-        width: 400
+        width: 400,
+        xaxis: {title: {text: "Severity"}, automargin: true},
+        yaxis: {title: {text: " Precipitation (in)"}, automargin: true}
     };
     let layout2 = {
         // barmode: 'group',
         title: 'Severity vs Windspeed',
         height: 400,
-        width: 400
+        width: 400,
+        xaxis: {title: {text: "Severity"}, automargin: true},
+        yaxis: {title: {text: " Wind Speed (mi)"}, automargin: true}
     };
 
     // Render the plot to the div tag with id "plot"
@@ -430,7 +443,8 @@ d3.json("/city/data").then(function(data) {
          ]
  var layout2={
              height:400,
-             width:400
+             width:400,
+             title: ""
          }
  Plotly.newPlot("plot8",trace2,layout2);
 
@@ -453,16 +467,18 @@ d3.json("/severity/data").then(function(data) {
       marker:{
        color: ['red','blue', 'orange', 'red']
       },
-      type: "pie"
+      type: "bar"
     };
       // Data trace array
       let traceData = [trace1];
  
  // Apply the group barmode to the layout
       let layout1 = {
-      //title: "Severity based accident data",
+      title: "Severity based accident data",
       height:400,
-      width:400
+      width:400,
+      xaxis: {title: {text: "Severity"}, automargin: true},
+        yaxis: {title: {text: " Accident Count"}, automargin: true}
      };
      // Render the plot to the div tag with id "plot"
      Plotly.newPlot("plot9", traceData, layout1);
@@ -471,6 +487,8 @@ d3.json("/severity/data").then(function(data) {
      //console.log(values);
      labels=["Severity 1","Severity 2","Severity 3","Severity 4"];//data.map(row => row.Severity);
      //console.log(labels);
+     
+     
      var trace2=[
                  {
                      values:values,
@@ -478,9 +496,11 @@ d3.json("/severity/data").then(function(data) {
                      type:"pie"
                  }
              ]
-     var layout2={
+     var layout2={title: "Severity based accident data",
                  height:400,
-                 width:400
+                 width:400,
+                 xaxis: {title: {text: "Severity"}, automargin: true},
+                yaxis: {title: {text: " Accident Count"}, automargin: true}
              }
      Plotly.newPlot("plot10",trace2,layout2);
  });
@@ -587,9 +607,12 @@ d3.json("/city/data").then(data => {
     // Apply the group barmode to the layout
     let layout1 = {
         barmode: 'group',
-        title: data.map(row => row.city),
+        // title: data.map(row => row.city),
         height: 400,
-        width: 400
+        width: 400,
+        title: "Total Accident Counts in Four Cities",
+        xaxis: {title: {text: " City"}, automargin: true},
+        yaxis: {title: {text: " Accident Count"}, automargin: true}
     };
 
     // Render the plot to the div tag with id "plot"
@@ -681,8 +704,12 @@ d3.json("/monthly/data").then(function (data) {
 
         // Apply the group barmode to the layout
         let layout1 = {
+            title: 'Monthly Varation of Total Accident Counts from 2019 to 2020',
             height: 500,
-            width: 1000
+            width: 800,
+            xaxis: {title: {text: ' Month'}, automargin: true},
+            yaxis: {title: {text: ' Accident Count'}, automargin: true},
+
         };
 
         // Render the plot to the div tag with id "plot"
