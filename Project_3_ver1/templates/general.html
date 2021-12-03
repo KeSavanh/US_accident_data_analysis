@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>General</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    
+    <!-- Plolty library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- CDN for Chart.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    
+    <!-- javascript -->
+    <script src="static/logic3.js"></script>
+
+</head>
+
+<body>
+    <!-- header starts -->
+    <div class="container-fluid" id="header-bx">
+        <a class="navbar-brand" id="title-header" href="index.html">Data Visualization Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>  
+    </header>
+    </div>
+    <div class="container-fluid" style="background-color: white; height: 18px;"></div>
+    <!-- header ends -->
+
+    <!-- container starts -->
+    <div class="container-fluid">
+        <!-- jumbotron starts -->
+        <div class="row flex-xl-nowrap">
+            <div class="col-12 col-md-12 col-xl-12 ev-jumbotron" style="text-align: center;">
+                <div class="jumbotron">
+                    <h1 class="display-4">US Car Accidents in 2019 and 2020</h1>
+                    <hr class="my-4">
+                    <p>Car accidents records for cities Dallas, Los Angeles, NewYork, SanDiego</p>
+                    <p class="lead">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- jumbotron ends -->
+        <!-- navbar starts -->
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs justify-content-center">
+                    <li class="nav-item"><a class="nav-link "href="/"style="font-size: 15px; font-weight: bold;">Home</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"style="font-size: 15px; font-weight: bold;">
+                        Visualization
+                        </a>
+                      <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/general">General Analysis</a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" href="/city-vis">Analysis by Cities</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 15px; font-weight: bold;">
+                            API
+                          </a>
+                        <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/year/data">Yearwise car accidents results in four cities</a>
+                                <a class="dropdown-item" href="/city/data">accidents counts in cities in a time range</a>
+                                <a class="dropdown-item" href="/monthly/data">accidents counts monthly</a>
+                                <a class="dropdown-item" href="/weekly/data">accidents counts weekly</a>
+                                <a class="dropdown-item" href="/hourly/data">accident counts by different hour range</a>
+                                <a class="dropdown-item" href="/severity/data">	
+                                    accidents count by severity</a>
+                                <a class="dropdown-item" href="/prcp-wsp/data">accident counts with precipitation</a>
+                                <a class="dropdown-item" href="/weather/data">accident counts with weather conditions</a>
+                                <a class="dropdown-item" href="/roadcondition/data">accident counts with traffic conditions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/aboutus" style="font-size: 15px; font-weight: bold;">About Us</a>
+                    </li>
+                    
+                  </ul>
+            </div>
+        </div>
+        <!-- navbar ends -->
+         
+
+
+
+        <!--  first section starts -->
+        <div class="row flex-xl-nowrap">
+            <!-- leftside bar starts -->
+            <div class="col-12 col-md-3 col-xl-2 " id="toc-container" style="background-color: rgb(209, 222, 245);">
+               <h5 style="margin-top: 50px;">Table of content</h5>
+               <hr style="border-radius: 2px; border: 1.5px solid gray">
+               <br>
+               <br>
+               <ul style="list-style-type:none;">
+                   <li class="toc-link">
+                       <a class="bd-toc-link" href="#section-one">Section 1</a></li>
+                       <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-two">Section 2</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-three">Section 3</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-four">Section 4</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-five">Section 5</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-six">Section 6</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-seven">Section 7</a></li>
+               </ul>
+            </div>
+            <!-- letside bar ends -->
+            <!-- main content starts -->
+            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content">
+
+                <div class="row" > 
+                    <div class="col-lg-12">
+                        <h2 id="section-one">Accident Counts trend for cities</h2>
+                        <br>
+                    </div>
+                </div>
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-10 full-height">
+                        <div id="plot-sect-1" class="full-height"></div>
+                    </div>
+
+                    
+                </div>
+                
+                
+            </div>
+            <!-- main content ends -->
+        </div>  
+        <!-- first section ends -->
+        
+        
+        
+        
+        
+        <!--  second section starts -->
+        <div class="row flex-xl-nowrap">
+            <!-- leftside bar starts -->
+            <div class="col-12 col-md-3 col-xl-2 " id="toc-container" style="background-color: rgb(209, 222, 245);">
+               <h5 style="margin-top: 50px;">Table of content</h5>
+               <hr style="border-radius: 2px; border: 1.5px solid gray">
+               <br>
+               <br>
+               <ul style="list-style-type:none;">
+                   <li class="toc-link">
+                       <a class="bd-toc-link" href="#section-one">Section 1</a></li>
+                       <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-two">Section 2</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-three">Section 3</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-four">Section 4</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-five">Section 5</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-six">Section 6</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-seven">Section 7</a></li>
+               </ul>
+            </div>
+            <!-- letside bar ends -->
+            <!-- main content starts -->
+            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content">
+
+                <div class="row" > 
+                    <div class="col-lg-12">
+                        <h2 id="section-one">Percentage of Accident Counts Variation Weekly and Hourly</h2>
+                        <br>
+                    </div>
+                </div>
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>plot1 description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-10 full-height">
+                        <div id="plot-sect-2" class="full-height"></div>
+                    </div>
+                </div>
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-5 full-height">
+                        <canvas id="myChart" height="600" ; width="600" style="background-color: white;"></canvas>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- main content ends -->
+        </div>  
+        <!-- second section ends -->
+
+
+
+        <!--  third section starts -->
+        <div class="row flex-xl-nowrap">
+            <!-- leftside bar starts -->
+            <div class="col-12 col-md-3 col-xl-2 " id="toc-container" style="background-color: rgb(209, 222, 245);">
+               <h5 style="margin-top: 50px;">Table of content</h5>
+               <hr style="border-radius: 2px; border: 1.5px solid gray">
+               <br>
+               <br>
+               <ul style="list-style-type:none;">
+                   <li class="toc-link">
+                       <a class="bd-toc-link" href="#section-one">Section 1</a></li>
+                       <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-two">Section 2</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-three">Section 3</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-four">Section 4</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-five">Section 5</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-six">Section 6</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-seven">Section 7</a></li>
+               </ul>
+            </div>
+            <!-- letside bar ends -->
+            <!-- main content starts -->
+            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content">
+
+                <div class="row" > 
+                    <div class="col-lg-12">
+                        <h2 id="section-one">Variation in Accident Counts for Different Factors</h2>
+                        <br>
+                    </div>
+                </div>
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-10 full-height">
+                        <div id="plot3" class="full-height"></div>
+                    </div>
+                </div>
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-10 full-height">
+                        <div id="plot4" class="full-height"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- main content ends -->
+        </div>  
+        <!-- third section ends -->
+
+
+
+
+
+
+        <!--  foth section starts -->
+        <div class="row flex-xl-nowrap">
+            <!-- leftside bar starts -->
+            <div class="col-12 col-md-3 col-xl-2 " id="toc-container" style="background-color: rgb(209, 222, 245);">
+               <h5 style="margin-top: 50px;">Table of content</h5>
+               <hr style="border-radius: 2px; border: 1.5px solid gray">
+               <br>
+               <br>
+               <ul style="list-style-type:none;">
+                   <li class="toc-link">
+                       <a class="bd-toc-link" href="#section-one">Section 1</a></li>
+                       <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-two">Section 2</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-three">Section 3</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-four">Section 4</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-five">Section 5</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-six">Section 6</a></li>
+                        <br>
+                    <li class="toc-link">
+                        <a class="bd-toc-link" href="#section-seven">Section 7</a></li>
+               </ul>
+            </div>
+            <!-- letside bar ends -->
+            <!-- main content starts -->
+            <div class="col-12 col-md-9 col-xl-10 py-md-5 ev-content">
+
+                <div class="row" > 
+                    <div class="col-lg-12">
+                        <h2 id="section-one">Variation in Accident Counts for Different Factors</h2>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-5 full-height">
+                        <div id="plot9" class="full-height"></div>
+                    </div>
+                    <div class="col-md-5 full-height">
+                        <div id="plot8" class="full-height"></div>
+                    </div>
+                </div>
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-5 full-height">
+                        <div id="plot10" class="full-height"></div>
+                    </div>
+                    <div class="col-md-5 full-height">
+                        <div id="plot11" class="full-height"></div>
+                    </div> 
+                    
+                </div>
+
+                <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
+                    <div class="col-md-12">
+                        <p>description</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="row " id="plot-container" style="background-color: rgb(225, 240, 240);">
+                    
+                    <div class="col-md-5 full-height">
+                        <div id="plot5" class="full-height"></div>
+                    </div>
+
+                    <div class="col-md-5 full-height">
+                        <div id="plot6" class="full-height"></div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <!-- main content ends -->
+        </div>  
+        <!-- foth section ends -->
+
+        
+    </div>
+
+    <!-- container ends -->
+
+
+    <!-- footer starts -->
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgb(53, 142, 169); font-size: 16px; font-weight: lighter; color: white;">
+        Data visualization project submission by: Team members
+        </div>
+    </footer>
+    <!-- footer ends -->   
+</body>
+
+</html>
