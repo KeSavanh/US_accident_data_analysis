@@ -98,10 +98,20 @@ d3.json("/weekly/data").then(function (data) {
             xaxis: {
                 tickvals: ['0', '1', '2', '3', '4', '5', '6'],
                 ticktext: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                tickangle: 45
+                tickangle: 45,
+                linecolor: 'black',
+                linewidth: 2,
+                mirror: true
             },
-            yaxis: { title: 'accident_counts_percentage' },
-            title: 'accidents_percentage variation on weekdays'
+            yaxis: {
+                title: 'accident_counts_percentage',
+                linecolor: 'black',
+                linewidth: 2,
+                mirror: true
+            },
+            title: 'accidents_percentage variation on weekdays',
+            height: 400,
+            width: 500
 
         };
 
@@ -204,8 +214,20 @@ d3.json("/hourly/data").then(function (data) {
         // Apply the group barmode to the layout
         let layout1 = {
             title: 'accidents_percentage variation hourly',
-            xaxis: { title: 'hours' },
-            yaxis: { title: 'accident_counts_percentage' }
+            xaxis: {
+                title: 'hours',
+                linecolor: 'black',
+                linewidth: 2,
+                mirror: true
+            },
+            yaxis: {
+                title: 'accident_counts_percentage',
+                linecolor: 'black',
+                linewidth: 2,
+                mirror: true
+            },
+            height: 400,
+            width: 500
         };
 
         // Render the plot to the div tag with id "plot"

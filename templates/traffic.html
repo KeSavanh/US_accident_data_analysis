@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>USCarAccidents</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- d3 cdn-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!----Plotly cdn-->
+    <!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+
+    <!-- CDN for Chart.JS -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+
+</head>
+
+<body>
+    <div class="container" style="background-color:white">
+
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center"
+                style="background-image:url(https://cdn.pixabay.com/photo/2014/04/27/00/43/traffic-332857_1280.jpg);background-size: contain;background-repeat: no-repeat;background-size :1200px 200px;;">
+                <h2 style="color:tan">US States Traffic 2019-2020</h2>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-2">
+
+                <div class="well" style="background-color:pink;">
+                    <h4>US States</h4>
+                    <select id="selState"></select>
+                </div>
+
+            </div>
+
+            <div class="col-md-10">
+                <canvas id="trafficPlot" height="350" ; width="700"></canvas>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    -->
+    <!-- CDN for Chart.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+
+    <script src="static/traffic.js"></script>
+
+</body>
+
+</html>

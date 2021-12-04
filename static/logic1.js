@@ -37,6 +37,7 @@ function fetchAccidentData() {
     console.log("Selected Year = " + selectedYear);
 
     const url = '/year/data?year=' + selectedYear + '&city=' + selectedCity
+    console.log(url)
     d3.json(url).then(data => handleYearResponse(data));
 }
 
@@ -101,7 +102,7 @@ function createMap(accidentsLayer, cityCenter, heat) {
     // Define a map object.
     myMap = L.map("map", {
         center: cityCenter,
-        zoom: 15,
+        zoom: 12,
         layers: [street, topo, accidentsLayer]
     });
 

@@ -1,8 +1,11 @@
+
 //////////////////////////////////////
-// DALLAS VS LOS ANGELES WEATHER COMPARISON////
+// accident counts comparison in different weather in 4 cities////
 
 d3.json("/weather/data").then(function (data) {
     console.log(data);
+
+    let yValues=data.filter
     names = data.map(function (row) {
         return row
     });
@@ -49,47 +52,6 @@ d3.json("/weather/data").then(function (data) {
     }
 });
 
-//////////////////////////////////////////////////
-//SEVERITY VS WEATHER COMPARISON//
-d3.json("/prcp-wsp/data").then(function (data) {
-    //  console.log(data);
-    //TRACE  FOR Severity vs Precipitation
-    let trace1 = {
-        x: data.map(row => row.severity),//row.severity),
-        y: data.map(row => row.precipitation),//row.precipitation),
-        name: "precipitation",
-        //mode: 'markers',
-        type: "bar"
-    };
-    //TRACE  FOR Severity vs Wind Speed
-    let trace2 = {
-        x: data.map(row => row.severity),
-        y: data.map(row => row.wind_speed),
-        name: "wind_speed",
-        //mode: 'markers',
-        type: "bar"
-    };
-    // Data trace array
-    let traceData = [trace2];
-    let traceprcp = [trace1];
 
-    // Apply the group barmode to the layout
-    let layout1 = {
-        // barmode: 'group',
-        title: 'Severity vs Precipitation',
-        height: 400,
-        width: 400
-    };
-    let layout2 = {
-        // barmode: 'group',
-        title: 'Severity vs Windspeed',
-        height: 400,
-        width: 400
-    };
-
-    // Render the plot to the div tag with id "plot"
-    Plotly.newPlot("plot2", traceData, layout2);
-    Plotly.newPlot("plot3", traceprcp, layout1);
-});
 
 

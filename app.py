@@ -212,7 +212,9 @@ def prcp_wsp():
 def weather():
     session = Session(bind=engine)
     results = session.query(USAccidents.Weather_Condition, USAccidents.Year, USAccidents.City, func.count(
-        USAccidents.Year)).group_by(USAccidents.Year, USAccidents.City, USAccidents.Weather_Condition).all()
+        USAccidents.Year)).group_by(USAccidents.Year, USAccidents.City, USAccidents.Weather_Condition).order_by(func.count(
+            USAccidents.Year).desc()).limit(20).all()
+
     session.close()
 
     response = []
@@ -316,6 +318,40 @@ def weathervis():
 @app.route("/condition-datavis")
 def conditionvis():
     return render_template('condition.html')
+
+
+#######################################################
+##            Project Part-II                        ##
+#######################################################
+USTraffic = base.classes.us_traffic
+
+
+@app.route("/us_traffic_data")
+def traffic_data():
+    session = Session(bind=engine)
+    results = session.query(USTraffic.Year, USTraffic.Month, USTraffic.State_CD, func.sum(USTraffic.Vehicle_Count)).\
+        group_by(USTraffic.Year, USTraffic.Month, USTraffic.State_CD).all()
+
+    session.close()
+
+    response = []
+
+    for row in results:
+        response.append({
+            "year": row[0],
+            "month": row[1],
+            "state_code": row[2],
+            "vehicle_count": row[3]
+
+
+        })
+
+    return jsonify(response)
+
+
+@app.route("/us_traffic_datavis")
+def traffic_vis():
+    return render_template("traffic.html")
 
 
 if __name__ == "__main__":
