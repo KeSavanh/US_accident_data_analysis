@@ -50,10 +50,10 @@
             <div class="centered">
                 <h1 id="title-text" >US Traffic Accidents in 2019 and 2020</h1>
                 <hr style=" height: 1.5px; width: 100%;color:white;background-color:white">
-                <p style="font-weight: normal; font-size: 18px; color: black;">Car accidents records for cities Dallas, Los Angeles, NewYork, SanDiego</p>
+                <p style="font-weight: normal; font-size: 20px; color: white;">Car accidents records for cities Dallas, Los Angeles, NewYork, SanDiego</p>
             </div>
             <div class="btm-right">
-                <a href="https://cdn.pixabay.com/" style="color: white; font-weight: normal; font-style: italic;">Image source: https://cdn.pixabay.com/</a>
+                <a href="https://cdn.pixabay.com/" style="color: white; font-weight: normal; font-style: italic;">Image source: https://static.aviva.io/</a>
             </div>
         </div>
     </div>
@@ -129,6 +129,11 @@
                     <div class="bd-toc-item">
                         <a class="bd-toc-link" href="#head-4">Conclusion</a>
                     </div>
+                    <br>
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="#head-5">Acknowledgments</a>
+                    </div>
+
                 </nav>
             </div>
             <!-- letside bar ends -->
@@ -143,7 +148,7 @@
                 <div class="row" id="description-container" style="background-color: rgb(225, 240, 240);">
                     <div class="col-md-12">
                         <br>
-                        <h2 id="head-2">Motivation: </h2>
+                        <h2 id="head-2">Motivation </h2>
                         <hr>
                         <p style="padding-left: 50px; padding-right: 400px;">Reducing traffic accidents is an essential public safety challenge all over the world., therefore accident analysis is subject of much research. Since we had the data up till 2020, our team was curious to analyze considering 2020 was global lockdown period. </p>
                         <br>
@@ -152,11 +157,12 @@
                         <ul style="padding-left: 100px; padding-right: 400px;">
                             <li>Which states and cities of the 4 have most traffic accidents?</li>
                             <li>What is the time of the day, the day of the week and the month with the higher number of accidents?</li>
-                            <li>How many accidents per year? and the fluctuation yearly? </li>
+                            <li>How many accidents and how they fluctuate over two years? </li>
                             <li>What are the most common weather conditions on the days of the accidents?</li>
                             <li>How many accidents have a severity level of 1, 2, 3 and 4? and what could be the factors?</li>
 
                         </ul>
+                        <br>
                         <br>
                         <h2 id="head-3">About the data</h2>
                         <hr>
@@ -170,16 +176,36 @@
                         <br>
                         <p style="padding-left: 50px; padding-right: 400px;">Data Exploration: </p>
                         <br>
-
-                        <p style="padding-left: 50px; padding-right: 400px;">Data Processe (ETL): </p>
+                        <p style="padding-left: 80px; padding-right: 400px;">The dataset is downloaded as CSV format, and has 47 columns totaly in this dataset. There are about 1.5 million rocords of accidents across USA and territories that make this dataset very larg (569.14 MB). We dropped unrelated columns and the remaining columns are: "ID", "Severity", "Start_Time", "End_Time", "Start_Lat", "Start_Lng", "Street", "City", "County", "State", "Wind_Speed(mph)", "Precipitation(in)", "Weather_Condition", "Amenity", "Amenity", "Crossing", "Give_Way", "Junction", "No_Exit", "Railway", "Roundabout", "Station Stop", "Traffic_Calming", "Traffic_Signal", "Turning_Loop"</p>
                         <br>
+
+
+                        <p style="padding-left: 50px; padding-right: 400px;">Data Processing (ETL): </p>
+                        <br>
+                        <ul style="padding-left: 100px; padding-right: 400px;">
+                            <li>Extracted the data from raw csv file. Used pandas to complete ETL Process.</li>
+                            <li>Identified Null values </li>
+                            <li>Changed the datatype of important columns (Date/Time)</li>
+                            <li>Filtered the data to select cities</li>
+                            <li>Load the clean dataframe to csv for the next step</li>
+                        
+                        </ul>
+
                         <p style="padding-left: 50px; padding-right: 400px;">Visualization: </p>
+                        <p style="padding-left: 50px; padding-right: 400px;">We display our charts and data into four major pages as below:</p>
+                        <ul style="padding-left: 100px; padding-right: 400px;">
+                            <li>Home: As a landing page displaying project title and summary with sidebar on the left holding table of content</li>
+                            <li>Visualization: Consists of two pages for general analysis and geographical analysis</li>
+                            <li>API: This page holds queries in Json files grenerated from Flask. </li>
+                            <li>About Us: A page for team members introduction</li>
+
+                        </ul>
+                        <br>
                         <br>
                         <h2 id="head-4">Conclusion </h2>
                         <hr>
                         <p style="padding-left: 50px; padding-right: 400px;">Findings</p>
                         <p style="padding-left: 50px; padding-right: 400px;">After the analysis, we found the following:</p>
-                        <br>
                         <ul style="padding-left: 100px; padding-right: 400px;">
                             <li>Los Angeles has the highest accidents count across four seclected cities.</li>
                             <li>Mondays and Fridays between 12 to 6pm has most count. December has seen highest rate.</li>
@@ -195,7 +221,14 @@
                             <li>Huge volume of data. Took a lot of time to load . </li>
                             <li>Order of libraries are important in html</li>
                         </ul>
-                        
+                        <br>
+                        <br>
+                        <h2 id="head-5">Acknowledgments</h2>
+                        <hr>
+                        <ul style="padding-left: 150px; padding-right: 400px;">
+                           <li>Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, and Rajiv Ramnath. <a href="https://arxiv.org/abs/1906.05409">“A Countrywide Traffic Accident Dataset.”</a> , arXiv preprint arXiv:1906.05409 (2019).</li>
+                            <li>Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. <a href="https://arxiv.org/abs/1909.09638">“Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights.”</a> In proceedings of the 27th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, ACM, 2019.</li>
+                        </ul>
                     </div>
                 </div>
                 

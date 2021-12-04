@@ -153,7 +153,7 @@ width: auto;
 /* Plots styling */
 
 #plot-sect-1-1 {
-  padding-left: 250px;
+  padding-left: 200px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
@@ -164,10 +164,10 @@ width: auto;
   padding-top: 25px;
 }
 
-#plot-sect-2-1, 
+
 #plot-sect-3-1,
 #plot-sect-3-2 { 
-  padding-left: 250px;
+  padding-left: 100px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
@@ -185,6 +185,7 @@ width: auto;
 #plot-sect-4-2,
 #plot-sect-4-2-1 {
   padding-left: 25px;
+  padding-bottom: 20px;
 }
 
 canvas { 
