@@ -49,7 +49,7 @@ body {
 
 #title-header {
   font-size: 30px;
-  color: white;
+  color:white;
   font-weight: lighter;
   /* padding-left: 300px; */
   padding-left: 30px;
@@ -143,7 +143,35 @@ width: auto;
   color: rgb(8, 55, 106);
 }
 
-.plot-container, canvas {
+/* .plot-container, canvas {
   
   padding-left: 50px;
+} */
+
+/* Plots styling */
+
+#plot-sect-1-1 {
+  padding-left: 250px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+#plot-sect-1-2 { 
+  padding-left: 250px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+#plot-sect-2-1, 
+#plot-sect-3-1,
+#plot-sect-3-2 { 
+  padding-left: 250px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+canvas { 
+  padding-left: 50px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }

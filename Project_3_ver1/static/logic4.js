@@ -1,3 +1,11 @@
+/////////////////////////////////////////////
+////  Section Four-1     /////////////////////
+////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+/// Severity pie & bar
+
+
 d3.selectAll("#selPlotType").on("change", () => {
     if (d3.select('#selPlotType').property('value') == 'bar') {
         createBarChart()
@@ -5,7 +13,6 @@ d3.selectAll("#selPlotType").on("change", () => {
         createPieChart()
     }
 });
-
 
 function createBarChart() {
 
@@ -31,15 +38,19 @@ function createBarChart() {
           title: "Severity based accident data",
           height:400,
           width:400,
-          xaxis: {title: {text: "Severity"}, automargin: true},
-            yaxis: {title: {text: " Accident Count"}, automargin: true}
+          xaxis: {title: {text: "Severity"}, automargin: true,
+                linecolor: 'black',
+                linewidth: 1,
+                mirror: true},
+            yaxis: {title: {text: " Accident Count"}, automargin: true,
+                linecolor: 'black',
+                linewidth: 1,
+                mirror: true}
          };
          // Render the plot to the div tag with id "plot"
-         Plotly.newPlot("plot9", traceData, layout1);
+         Plotly.newPlot("plot-sect-4-1", traceData, layout1);
         });
 }      
-
-
 
 function createPieChart() {
 
@@ -63,11 +74,16 @@ function createPieChart() {
  var layout2={title: "Severity based accident data",
             height:400,
             width:400,
-            xaxis: {title: {text: "Severity"}, automargin: true},
-            yaxis: {title: {text: " Accident Count"}, automargin: true},
-            margin: {t=10, b=10, l=0, r=0}
+            xaxis: {title: {text: "Severity"}, automargin: true,
+                    linecolor: 'black',
+                    linewidth: 1,
+                    mirror: true},
+            yaxis: {title: {text: " Accident Count"}, automargin: true,
+                    linecolor: 'black',
+                    linewidth: 1,
+                    mirror: true}
          }
- Plotly.newPlot("plot9",trace2,layout2);
+ Plotly.newPlot("plot-sect-4-1",trace2,layout2);
 
 
   });
