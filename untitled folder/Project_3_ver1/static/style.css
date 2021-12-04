@@ -1,0 +1,194 @@
+/* Remove the default margin and padding from the body. */
+body {
+    padding: 0;
+    margin: 0;
+    cursor:pointer !important;
+    background-color: white;
+}
+
+.jumbotron {
+    /* background-color: rgb(32, 180, 191) ; */
+    background-image: url(jumbopic.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 10% 20%;
+    font-weight: bolder;
+}
+
+.maintxt {
+  text-align: center;
+   font-size: 25px;
+}
+
+#title-text {
+  font-size: 50px;
+  color: white;
+  padding-bottom: 100px;
+
+}
+
+#title-img {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+}
+
+ /* Centered text */
+ .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 50px;
+}
+.btm-right {
+  position:absolute;
+  bottom: 5px;
+  right: 370px;
+  font-size: 11px;
+}
+
+#title-header {
+  font-size: 30px;
+  color:white;
+  font-weight: lighter;
+  /* padding-left: 300px; */
+  padding-left: 30px;
+}
+#header-bx { 
+  /* background-color: rgb(53, 142, 169); */
+  /* background-image: url('headerpic.jpg'); */
+  background-image: url('headerpic1.jpg');
+  height: 70px;
+}
+/* h1 {
+  font-size: 30px;
+  padding-top: 10px;
+} */
+
+#title-img  {
+  opacity: 1; 
+  /* border-style: solid;
+  border-width: 5px;
+   border-color: rgb(225, 225, 225);*/
+   border-radius: 5px;
+}
+
+
+  /* Set map, body, and html to 100% of the screen size. */
+  
+  .container,
+  #map,
+  body,
+  html {
+    height: 100%;
+  }
+
+  /*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}
+ .plot-container {
+  height: 65%; 
+} 
+
+.full-height {
+  height: 100%
+}
+
+/* #header-bx {
+  background-color: rgb(53, 142, 169);
+  height: 70px;
+} */
+/* .full-height {
+height: 700px;
+width: auto;
+} */
+
+.dropdown-item {
+  color: rgb(13, 80, 152);
+}
+
+.nav-link {
+  color: rgb(8, 55, 106);
+}
+
+/* .plot-container, canvas {
+  
+  padding-left: 50px;
+} */
+
+/* Plots styling */
+
+#plot-sect-1-1 {
+  padding-left: 250px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+#plot-sect-1-2 { 
+  padding-left: 100px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+#plot-sect-2-1, 
+#plot-sect-3-1,
+#plot-sect-3-2 { 
+  padding-left: 250px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+#plot-sect-2-1
+ { 
+  padding-left: 100px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+#plot-sect-4-1 {
+  padding-top: 20px;
+  padding-left: 25px;
+}
+
+#plot-sect-4-2,
+#plot-sect-4-2-1 {
+  padding-left: 25px;
+}
+
+canvas { 
+  padding-left: 50px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
