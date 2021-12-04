@@ -7,12 +7,15 @@
 
 
 d3.selectAll("#selPlotType").on("change", () => {
+
     if (d3.select('#selPlotType').property('value') == 'bar') {
         createBarChart()
     } else if (d3.select('#selPlotType').property('value') == 'pie') {
         createPieChart()
     }
 });
+
+createBarChart();
 
 function createBarChart() {
 

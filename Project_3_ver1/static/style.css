@@ -22,6 +22,8 @@ body {
 
 #title-text {
   font-size: 50px;
+  color: white;
+  padding-bottom: 100px;
 
 }
 
@@ -157,7 +159,7 @@ width: auto;
 }
 
 #plot-sect-1-2 { 
-  padding-left: 250px;
+  padding-left: 100px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
@@ -168,6 +170,21 @@ width: auto;
   padding-left: 250px;
   padding-bottom: 25px;
   padding-top: 25px;
+}
+#plot-sect-2-1
+ { 
+  padding-left: 100px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+#plot-sect-4-1 {
+  padding-top: 20px;
+  padding-left: 25px;
+}
+
+#plot-sect-4-2,
+#plot-sect-4-2-1 {
+  padding-left: 25px;
 }
 
 canvas { 

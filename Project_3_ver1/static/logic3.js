@@ -500,7 +500,10 @@ d3.json("/weather/data").then(function (data) {
                 type: 'sort',
                 target: 'x',
                 order: 'descending'
-              }]  
+              }],
+            marker: {
+                color: '#7597b7',
+            }  
         };
         let trace2 = {
             x: City2.map(row => row.accidents_count),
@@ -512,7 +515,10 @@ d3.json("/weather/data").then(function (data) {
                 type: 'sort',
                 target: 'x',
                 order: 'descending'
-              }] 
+              }],
+              marker: {
+                color: '#6b6c93',
+            }  
         };
         let trace3 = {
             x: City3.map(row => row.accidents_count),
@@ -524,7 +530,11 @@ d3.json("/weather/data").then(function (data) {
                 type: 'sort',
                 target: 'x',
                 order: 'descending'
-              }]  
+              }]  ,
+
+              marker: {
+                color: '#f8de7e',
+            }  
         };
         let trace4 = {
             x: City4.map(row => row.accidents_count),
@@ -536,7 +546,10 @@ d3.json("/weather/data").then(function (data) {
                 type: 'sort',
                 target: 'x',
                 order: 'descending'
-              }]
+              }],
+              marker: {
+                color: '#bf4f51',
+            } 
         };
         // Data trace array
         let traceData = [trace2, trace1, trace3, trace4];

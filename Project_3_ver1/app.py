@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 from flask.wrappers import Response
-import numpy as np
+# import numpy as np
 import sqlalchemy
 from sqlalchemy import create_engine, func, or_
 from sqlalchemy.ext.automap import automap_base
