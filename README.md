@@ -181,7 +181,7 @@ Here are the final html pages power up by python flask app.
 
 ![4](Project_3_ver1/static/aboutus.gif)
 
-## cknowledgments:
+## Acknowledgments:
 
 * Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, and Rajiv Ramnath. <a href="https://arxiv.org/abs/1906.05409">“A Countrywide Traffic Accident Dataset.”</a> , arXiv preprint arXiv:1906.05409 (2019).
 * Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. <a href="https://arxiv.org/abs/1909.09638">“Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights.”</a> In proceedings of the 27th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, ACM, 2019.
