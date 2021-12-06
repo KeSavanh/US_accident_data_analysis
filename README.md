@@ -64,7 +64,7 @@ We used the following workflow to create our final web page.
 
 
 * We downloaded the inital raw data as `CSV` file from [Data source](https://www.kaggle.com/sobhanmoosavi/us-accidents). Due to the size of the file (569.1 MB), which is over GitHub allowance. This time we couldn't be able to include the file in this repository.
-* Data extraction and cleaning were carried out using Pandas in a Jupyter notebook called [`USAccidentsETL.ipynb`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidentsETL.ipynb). As mentioned earlier the initial CSV file () is not included, in order to run this extraction process, `US_Accidents_Dec20_updated.csv` needs to be downloaded from the source above.
+* Data extraction and cleaning were carried out using Pandas in a Jupyter notebook called [`USAccidentsETL.ipynb`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidentsETL.ipynb). As mentioned earlier the initial CSV file is not included, in order to run this extraction process, `US_Accidents_Dec20_updated.csv` needs to be downloaded from the source above.
 
 * The cleaning process included: 
     * Identifying and droping Null values,
