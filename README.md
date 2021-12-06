@@ -27,7 +27,7 @@ Reducing traffic accidents is an essential public safety challenge all over the 
 
 The purpose of this analysis is to answer the following questions: 
 
-* Which states and cities of the 4 have most traffic accidents
+* Which states and cities of the 4 have most traffic accidents?
 * What is the time of the day, the day of the week and the month with the higher number of accidents?
 * How many accidents over the two years? 
 * What are the most common weather conditions on the days of the accidents?
@@ -62,11 +62,26 @@ We used the following workflow to create our final web page.
 
 ## Extraction – Transformation – Load:
 
-* Extracted the data from raw csv file. Used pandas to complete ETL Process. 
-* Identified Null values
-* Changed the datatype of important columns (Date/Time)
-* Filtered the data to select cities
-* Load the clean dataframe to csv for the next step
+
+* We downloaded the inital raw data as `CSV` file from [Data source](https://www.kaggle.com/sobhanmoosavi/us-accidents). Due to the size of the file (569.1 MB), which is over GitHub allowance. This time we couldn't be able to include the file in this repository.
+* Data extraction and cleaning were carried out using Pandas in a Jupyter notebook called [`USAccidentsETL.ipynb`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidentsETL.ipynb). As mentioned earlier the initial CSV file () is not included, in order to run this extraction process, `US_Accidents_Dec20_updated.csv` needs to be downloaded from the source above.
+
+* The cleaning process included: 
+- identifying and droping Null values,
+- Changing the datatype of important columns (Date/Time),
+- Filtered the data to select cities
+
+* After the cleaning process, for further analysis, there are two `CSV` files created: [`USAccidents_Clean.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidents_Clean.csv) and [WeatherData.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/WeatherData.csv) which we extracted catagorical data seperately in this file. 
+
+* Then the cleaned dataframes is loaded to SQLite database as processed in this Jupyter notebook [`Cleaned_data.ipynb`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/Cleaned_data.ipynb). In there, the functions commented out in line `[25]` and `[26]` are to delete the existing tables, and those need to be excuted before creating the new tables. 
+```
+In [25] : #conn.execute("DROP TABLE us_accidents ")
+```
+```
+In [26] : #conn.execute("DROP TABLE us_weather ")
+```
+
+The next step we created a Python [`app.py`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/app.py), to generate `Json` formate files based on data queried from our tables in database. and below shows how our [`app.py`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/app.py) function looks like: 
 
 ### FLASK – API route generation:
 
@@ -110,6 +125,8 @@ def yearlyaccidents():
     return jsonify(response)
 
 ```
+
+This shows how our Json file looks like:
 
 ### JSON Response:
 
@@ -158,6 +175,7 @@ def yearlyaccidents():
 ]
 
 ```
+
 
 ## Visualization:
 
