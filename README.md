@@ -67,9 +67,9 @@ We used the following workflow to create our final web page.
 * Data extraction and cleaning were carried out using Pandas in a Jupyter notebook called [`USAccidentsETL.ipynb`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidentsETL.ipynb). As mentioned earlier the initial CSV file () is not included, in order to run this extraction process, `US_Accidents_Dec20_updated.csv` needs to be downloaded from the source above.
 
 * The cleaning process included: 
-- identifying and droping Null values,
-- Changing the datatype of important columns (Date/Time),
-- Filtered the data to select cities
+    * Identifying and droping Null values,
+    * Changing the datatype of important columns (Date/Time),
+    * Filtered the data to select cities
 
 * After the cleaning process, for further analysis, there are two `CSV` files created: [`USAccidents_Clean.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidents_Clean.csv) and [`WeatherData.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/WeatherData.csv) which we extracted catagorical data seperately in this file. 
 
