@@ -71,7 +71,7 @@ We used the following workflow to create our final web page.
 - Changing the datatype of important columns (Date/Time),
 - Filtered the data to select cities
 
-* After the cleaning process, for further analysis, there are two `CSV` files created: [`USAccidents_Clean.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidents_Clean.csv) and [WeatherData.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/WeatherData.csv) which we extracted catagorical data seperately in this file. 
+* After the cleaning process, for further analysis, there are two `CSV` files created: [`USAccidents_Clean.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/USAccidents_Clean.csv) and [`WeatherData.csv`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/WeatherData.csv) which we extracted catagorical data seperately in this file. 
 
 * Then the cleaned dataframes is loaded to SQLite database as processed in this Jupyter notebook [`Cleaned_data.ipynb`](https://github.com/KeSavanh/Project_3/blob/main/Project_3_ver1/Cleaned_data.ipynb). In there, the functions commented out in line `[25]` and `[26]` are to delete the existing tables, and those need to be excuted before creating the new tables. 
 ```
